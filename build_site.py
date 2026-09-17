@@ -147,7 +147,7 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
     sx = lambda v: ml + pw * (v - xmin) / (xmax - xmin)  # noqa: E731
     slot = ph / len(rows)
     bh = min(22, slot * 0.6)
-    out = [f'<svg class="chart" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(floor_label)} by option">']
+    out = [f'<svg class="chart chart-wide" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(floor_label)} by option">']
     ys = [mt + slot * i + (slot - bh) / 2 for i in range(len(rows))]
     # layer order: bars, then the floor line across them, then value labels with a
     # surface-coloured halo so the line never runs through a label
@@ -163,6 +163,34 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
     out.append(f'<text x="{sx(floor) + 4:.1f}" y="{height - 8}" class="tick">{html.escape(floor_label)}</text>')
     for (label, v, ok), y in zip(rows, ys):
         out.append(f'<text x="{sx(v) + 6:.1f}" y="{y + bh / 2 + 4:.1f}" class="tick" paint-order="stroke" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">{fmt(v)}</text>')
+    out.append("</svg>")
+    return "".join(out) + hbar_chart_narrow(rows, floor, floor_label, fmt, xmin=xmin, xmax=xmax)
+
+
+def hbar_chart_narrow(rows: list, floor: float, floor_label: str, fmt, xmin=0.0, xmax=None) -> str:
+    """Phone layout of hbar_chart: each option's label sits on its own line above
+    its bar, so the viewBox is about as wide as a phone card and text renders near
+    its nominal size instead of being scaled down to a few pixels."""
+    width, mt, mb, row_h, bh, value_room = 320, 4, 24, 44, 14, 46
+    pw = width - value_room
+    vals = [v for _, v, _ in rows]
+    xmax = xmax if xmax is not None else max(vals + [floor]) * 1.1
+    sx = lambda v: pw * (v - xmin) / (xmax - xmin)  # noqa: E731
+    ph = row_h * len(rows)
+    height = mt + ph + mb
+    out = [f'<svg class="chart chart-narrow" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(floor_label)} by option">']
+    for i, (label, v, ok) in enumerate(rows):
+        top = mt + row_h * i
+        out.append(f'<rect x="0" y="{top + 20:.1f}" width="{max(1, sx(v)):.1f}" height="{bh}" fill="{BLUE if ok else RED}" rx="3"><title>{html.escape(label)}: {fmt(v)}</title></rect>')
+    out.append(f'<line x1="{sx(floor):.1f}" x2="{sx(floor):.1f}" y1="{mt}" y2="{mt + ph}" stroke="#171715" stroke-width="1.2"/>')
+    for i, (label, v, ok) in enumerate(rows):
+        top = mt + row_h * i
+        parts = label.replace("Front-loaded plan with Insights contractors", "Front-loaded + contractors").split("; ")
+        text = " · ".join([parts[0], parts[1].replace("one-year cloud commitment", "one-year commitment")]) if len(parts) == 2 else label
+        halo = 'paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"'
+        out.append(f'<text x="0" y="{top + 13:.1f}" class="lbl" {halo}>{html.escape(text)}</text>')
+        out.append(f'<text x="{sx(v) + 6:.1f}" y="{top + 31:.1f}" class="lbl" {halo}>{fmt(v)}</text>')
+    out.append(f'<text x="{sx(floor) + 4:.1f}" y="{height - 6}" class="lbl">{html.escape(floor_label)}</text>')
     out.append("</svg>")
     return "".join(out)
 
@@ -183,7 +211,7 @@ def build() -> Path:
     a = asm.load()
     SITE.mkdir(exist_ok=True)
     (SITE / "assets").mkdir(exist_ok=True)
-    for src in ("northlight_planning_model.xlsx", "cfo_memo.pdf", "board_pack.pdf", "cfo_memo.md"):
+    for src in ("northlight_planning_model.xlsx", "cfo_memo.pdf", "board_pack.pdf", "cfo_memo.md", "og.png"):
         shutil.copy(OUT / src, SITE / "assets" / src)
 
     c = F["options"][F["chosen"]]
@@ -222,7 +250,7 @@ def build() -> Path:
         v = F["options"][o]
         verdict = "Recommended" if o == F["chosen"] else ("Passes" if v["feasible"] else
                   ("Fails runway" if not v["runway_ok"] else "Fails margin"))
-        option_rows.append([v["label"], f"{v['plan_hires']}", M(v["base_arr_end"]), M(v["upside_arr_end"]), M(v["downside_arr_end"]),
+        option_rows.append([v["label"], f"{v['listed_hires']}", M(v["base_arr_end"]), M(v["upside_arr_end"]), M(v["downside_arr_end"]),
                             f"{v['downside_runway_min']:.0f}", P(v["base_gm_min"], 1), verdict])
     scen_rows = [[sc.capitalize(), M(F[f"chosen_{sc}_arr_end"]), P(F[f"chosen_{sc}_arr_end"] / F["arr_now"] - 1),
                   M(F[f"chosen_{sc}_cash_min"]), fx.months_str(F[f"chosen_{sc}_runway_min"]), P(F[f"chosen_{sc}_gm_min"], 1),
@@ -230,7 +258,8 @@ def build() -> Path:
                  for sc in ("base", "upside", "downside")]
     bridge_rows = [[r["line_label"], r["component"], fx.signed_kusd(r["impact"])] for r in mat]
     bench = a.table[a.table["source_type"] == "benchmark"]
-    assumption_rows = [[html.escape(r.name), f"{r.base:g}", f"{r.upside:g}", f"{r.downside:g}", r.unit, r.source_type] for r in a.table.reset_index().itertuples()]
+    # table() escapes every cell, so names go in raw (escaping here too printed "R&amp;D")
+    assumption_rows = [[r.name, f"{r.base:g}", f"{r.upside:g}", f"{r.downside:g}", r.unit, r.source_type] for r in a.table.reset_index().itertuples()]
     log_rows = [[r.version, r.date, r.assumption_id, r.scenario, r.old_value, r.new_value, r.reason] for r in asm.read_changelog().itertuples()]
     hire_rows = [[r["role"], r["location"], fx.month_name(r["start_month"]), r["count"], r["rationale"]] for r in F["hiring_rows"]]
     loaded = F["loaded_senior_eng"]
@@ -243,8 +272,14 @@ def build() -> Path:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alan Vourc'h &middot; Driver-based planning for a SaaS scale-up</title>
-<meta name="description" content="A portfolio project by Alan Vourc'h, FP&A: an 18-month driver-based plan for a SaaS scale-up that decides headcount, cloud and product investment under base, upside and downside scenarios, with an actual-versus-plan bridge, versioned assumptions and an auditable Excel export.">
+<title>Hiring and cloud decision for a SaaS scale-up | Alan Vourc'h</title>
+<meta name="description" content="A case study by Alan Vourc'h, former Head of FP&amp;A: an 18-month driver-based plan for a SaaS scale-up that decides headcount, cloud and product investment under base, upside and downside scenarios, with an actual-versus-plan bridge, versioned assumptions and an auditable Excel export.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alanvourch.com/fpa-planning-model/">
+<meta property="og:title" content="Hiring and cloud decision for a SaaS scale-up | Alan Vourc'h">
+<meta property="og:description" content="Hire in phases, commit the cloud, and hold the bigger plan until retention proves out. An 18-month plan under three scenarios, with a CFO memo, a board pack and an Excel model.">
+<meta property="og:image" content="https://alanvourch.com/fpa-planning-model/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root {{ --bg:#fcfcfb; --surface:#fff; --ink:#171715; --ink-2:#4f4e4a; --muted:#85837d; --line:#e6e5de;
           --accent:#2a78d6; --accent-ink:#1d5aa6; --accent-soft:#e9f2fc; --bad:#c23434; --warn-bg:#fdf6e7; --warn-line:#e8d9b0;
@@ -299,7 +334,9 @@ def build() -> Path:
   .node::after {{ content:"\\2192"; position:absolute; right:-11px; top:50%; transform:translateY(-50%); color:var(--muted); font-size:16px; z-index:2; }}
   .node:last-child::after {{ content:none; }}
   .chart {{ width:100%; height:auto; display:block; margin-top:8px; }}
+  .chart.chart-narrow {{ display:none; }}
   .chart .tick {{ font:11.5px "Segoe UI",system-ui,sans-serif; fill:var(--muted); }}
+  .chart .lbl {{ font:12.5px "Segoe UI",system-ui,sans-serif; fill:var(--ink-2); }}
   .chart .endlabel {{ font:12px "Segoe UI",system-ui,sans-serif; fill:var(--ink-2); font-weight:600; }}
   .legend {{ display:flex; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin-top:14px; }}
   .legend i {{ display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px; }}
@@ -323,6 +360,7 @@ def build() -> Path:
   @media (max-width:820px) {{ .flow {{ grid-template-columns:minmax(0,1fr); }} .node::after {{ content:"\\2193"; right:50%; top:auto; bottom:-15px; transform:translateX(50%); }} .two {{ grid-template-columns:minmax(0,1fr); }} }}
   @media (max-width:640px) {{ .stats {{ grid-template-columns:repeat(2,minmax(0,1fr)); }} .tiles {{ grid-template-columns:minmax(0,1fr); }}
     .card {{ padding:18px 16px; }}
+    .chart.chart-wide {{ display:none; }} .chart.chart-narrow {{ display:block; }}
     .tblwrap {{ overflow-x:visible; }}
     table.tbl, .tbl tbody, .tbl tr, .tbl td {{ display:block; width:100%; }}
     .tbl thead {{ display:none; }}
@@ -338,7 +376,7 @@ def build() -> Path:
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">Alan Vourc'h &middot; FP&amp;A, planning and scenarios</span>
+    <span class="eyebrow"><a href="https://alanvourch.com/" style="color:inherit;text-decoration:none;">Alan Vourc'h</a> &middot; Head of FP&amp;A &middot; case study</span>
     <h1>Hire in phases, commit the cloud, and hold the bigger plan until retention proves out.</h1>
     <p>That is what this planning model tells the CFO and the head of engineering of a
     {M(F['arr_now'], 0)} ARR software company to do over the next 18 months. It reaches
@@ -371,11 +409,19 @@ def build() -> Path:
     <div class="tiles">
       <div class="tile"><span class="tag">Option</span><h3>Hold hiring</h3><p>Backfills only. Ends with {M(hold['base_cash_end'])} of cash and
         {M(hold['base_arr_end'])} of ARR in the base case, {M(F['hold_arr_gap_base'])} below the recommended plan.</p></div>
-      <div class="tile pick"><span class="tag">Recommended</span><h3>Phased plan</h3><p>{F['hires_total']} hires from {fx.month_name(F['first_hire_month'])} to
+      <div class="tile pick"><span class="tag">Recommended</span><h3>Phased plan</h3><p>{F['hires_total']} planned hires from {fx.month_name(F['first_hire_month'])} to
         {fx.month_name(F['last_hire_month'])}, {F['hires_rd']} of them in R&amp;D. {M(c['base_arr_end'])} of ARR in the base case; runway never below
         {c['downside_runway_min']:.0f} months in the downside.</p></div>
-      <div class="tile fail"><span class="tag">Fails a guardrail</span><h3>Front-loaded plan</h3><p>{front['plan_hires']} hires by early 2027 plus product contractors.
+      <div class="tile fail"><span class="tag">Fails a guardrail</span><h3>Front-loaded plan</h3><p>{F['front_hires_total']} planned hires by {fx.month_name(F['front_last_hire_month'])} plus product contractors.
         Only {M(F['front_extra_arr_base'])} more ARR than the phased plan, and downside runway falls to {front['downside_runway_min']:.1f} months, {F['front_runway_shortfall']:.1f} short of the floor.</p></div>
+    </div>
+    <p class="caption">Planned hires are the seats listed in each hiring plan. On top of them the model adds customer success hires as the customer base grows:
+    {_count(c['auto_hires_base'], 'hire')} in the phased plan and {_count(front['auto_hires_base'], 'hire')} in the front-loaded plan, base case.</p>
+    <div class="proof">
+      <p><b>What the extra growth costs.</b> Holding hiring also passes both guardrails. The phased plan burns
+      {M(F['hold_burn_gap'])} more over 18 months to end with {M(F['hold_arr_gap_base'])} more ARR, about USD {F['burn_per_extra_arr']:.1f} of burn
+      for each extra dollar of ARR. That is the judgment in this plan, and the Q1 2027 retention review is where it gets tested.</p>
+      <p style="margin-top:10px;">{_floor_sentence(F)}</p>
     </div>
     <div class="proof">
       <p><b>On cloud, the model is unambiguous.</b> Running on demand fails the gross margin floor
@@ -385,7 +431,7 @@ def build() -> Path:
     </div>
     <p style="margin-top:22px;"><b>What a company does differently because of this.</b></p>
     <ul class="plain">
-      <li>Engineering opens {F['hires_rd']} requisitions in a fixed order over eight months instead of {F['front_hires_rd']} inside a quarter, and the Insights contractor push waits for the Q1 2027 retention review.</li>
+      <li>Engineering opens {F['hires_rd']} requisitions in a fixed order over {F['hires_span_months']} months instead of {F['front_hires_rd']} over {F['front_rd_span_months']} months, and the Insights contractor push waits for the Q1 2027 retention review.</li>
       <li>The cloud commitment is signed before the renewal window, sized at {P(F['commit_coverage'])} of expected usage so the downside does not strand much.</li>
       <li>Two guardrails become standing policy: {F['min_runway']:.0f} months of downside runway and a {P(F['gm_floor'])} gross margin floor, checked every month against the same drivers.</li>
     </ul>
@@ -410,7 +456,7 @@ def build() -> Path:
       <div class="card"><h3>Minimum downside runway, months</h3>{runway_chart}</div>
       <div class="card"><h3>Minimum base gross margin</h3>{gm_bar}</div>
     </div>
-    {table(["Option", "Hires", "ARR base", "ARR upside", "ARR downside", "Downside runway (months)", "Base gross margin min", "Verdict"], option_rows)}
+    {table(["Option", "Planned hires", "ARR base", "ARR upside", "ARR downside", "Downside runway (months)", "Base gross margin min", "Verdict"], option_rows)}
     <p class="caption">Objective: the highest base-case ARR at {horizon_end} among options that pass both guardrails. {F['n_options']} options, {F['n_runs']} runs of the same engine.</p>
     <div class="card" style="margin-top:22px;"><h3>Gross margin with and without the cloud commitment, base case</h3>{gm_chart}</div>
   </div>
@@ -522,13 +568,15 @@ python -m venv .venv
     <span class="kicker">7 &middot; About</span>
     <div class="about">
       <b>Alan Vourc'h</b>
-      <span class="title">FP&amp;A &middot; finance and data, together</span>
-      <p style="margin-top:10px;max-width:46em;">Northlight is fictional, but the question is not. I have run budgets, forecasts and
-      headcount plans for a EUR100M business and consolidated costs across twelve business units at a global bank. This model is the
+      <span class="title">Former Head of FP&amp;A, Auditoire (TBWA Group)</span>
+      <p style="margin-top:10px;max-width:46em;">Northlight is fictional, but the question is not. As Head of FP&amp;A I ran budgets, forecasts and
+      headcount plans for a EUR100M business, and before that consolidated costs across twelve business units at a global bank. This model is the
       forward-looking half of that work: the machinery a finance team needs before the debate about the numbers can even start.
-      A companion project, <a href="https://alanvourch.com/fpa-project/">the automated monthly close</a>, covers the backward-looking half.</p>
+      A companion case study, <a href="https://alanvourch.com/fpa-project/">the monthly budget-versus-actual pack</a>, covers the backward-looking half.</p>
       <div class="contact">
-        <a class="btn primary" href="https://www.linkedin.com/in/alan-vourch/">LinkedIn</a>
+        <a class="btn primary" href="https://alanvourch.com/">Portfolio</a>
+        <a class="btn" href="https://alanvourch.com/Alan-Vourch-Resume-EN.pdf">Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/alan-vourch/">LinkedIn</a>
         <a class="btn" href="mailto:alan.vourch@gmail.com">alan.vourch@gmail.com</a>
       </div>
     </div>
@@ -538,7 +586,8 @@ python -m venv .venv
 <footer>
   <div class="wrap">
     <p>All data on this page is synthetic and generated from a fixed seed. Nothing real except the method.
-    Code, tests and the decisions log are in the <a href="https://github.com/alanvourch/fpa-planning-model">GitHub repository</a>.</p>
+    Code, tests and the decisions log are in the <a href="https://github.com/alanvourch/fpa-planning-model">GitHub repository</a>.
+    More about me: <a href="https://alanvourch.com/">alanvourch.com</a> &middot; <a href="https://alanvourch.com/Alan-Vourch-Resume-EN.pdf">resume</a>.</p>
   </div>
 </footer>
 
@@ -548,6 +597,21 @@ python -m venv .venv
     path = SITE / "index.html"
     path.write_text(page, encoding="utf-8")
     return path
+
+
+def _count(n: int, word: str) -> str:
+    return f"{n} {word}" if n == 1 else f"{n} {word}s"
+
+
+def _floor_sentence(F: dict) -> str:
+    if F["budget_floor_chosen"] == F["chosen"]:
+        return (f"<b>The runway floor does not decide it.</b> At the budget's {F['budget_min_runway']:.0f}-month floor "
+                f"the model recommends the same plan.")
+    changed = f" in {fx.month_name(F['runway_floor_changed'])}" if F["runway_floor_changed"] else ""
+    return (f"<b>The runway floor decides the answer.</b> The budget used a {F['budget_min_runway']:.0f}-month floor, and at "
+            f"{F['budget_min_runway']:.0f} months the model recommends {html.escape(fx.option_phrase(F['budget_floor_chosen_label']))}. "
+            f"The board raised the floor to {F['min_runway']:.0f} months{changed} (see the change log below), and that change is "
+            f"what the recommendation turns on.")
 
 
 def _ondemand_gm():

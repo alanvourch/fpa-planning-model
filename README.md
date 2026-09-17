@@ -17,7 +17,7 @@ number is produced by ordinary finance arithmetic that the tests check.
 downloadable memo, board pack and workbook:
 **[the live case study](https://alanvourch.com/fpa-planning-model/)** (built from
 `site/index.html`). A companion project,
-[the automated monthly close](https://github.com/alanvourch/fpa-project), covers
+[the monthly budget-versus-actual pack](https://github.com/alanvourch/fpa-project), covers
 the backward-looking half of the FP&A loop; this one is the forward-looking half.
 
 ## The conclusion
@@ -27,13 +27,22 @@ Northlight is at about USD 24M of ARR, growing about 40% a year, with about USD
 budget because customers of the data-heavy Insights add-on consume about a third
 more compute than planned.
 
-The model recommends the phased hiring plan (22 hires from October 2026 to May
-2027, 14 of them in R&D) together with a one-year cloud commitment. The
-front-loaded plan (31 hires plus contractors) buys under USD 2M of extra ARR by
-February 2028 and breaks the 18-month downside runway guardrail. Running cloud on
-demand fails the gross margin floor in every hiring plan. Holding hiring keeps
-more cash but ends well below the recommended plan in ARR. The exact figures are
-in `output/decision.json`, `output/option_verdict.csv` and the memo.
+The model recommends the phased hiring plan (22 planned hires from October 2026
+to May 2027, 14 of them in R&D) together with a one-year cloud commitment. The
+front-loaded plan (29 planned hires plus contractors) buys under USD 2M of extra
+ARR by February 2028 and breaks the 18-month downside runway guardrail. Both
+counts are the seats listed in each plan; the model adds customer success hires
+on top as the customer base grows. Running cloud on demand fails the gross
+margin floor in every hiring plan.
+
+Two things decide the answer and are stated in the memo rather than left for a
+reader to find. Holding hiring also passes both guardrails: the phased plan
+burns about USD 4.5M more over 18 months for about USD 2.2M more ARR, roughly
+two dollars of burn per extra dollar of ARR. And the runway floor matters: at
+the budget's 12-month floor the model recommends the front-loaded plan; the
+board's move to 18 months (change log v1.3) is what changes the answer. The
+exact figures are in `output/decision.json`, `output/option_verdict.csv` and the
+memo.
 
 ## What the model contains
 
@@ -74,7 +83,7 @@ in `output/decision.json`, `output/option_verdict.csv` and the memo.
 
 ## How it is checked
 
-`tests/` holds 43 tests, run with `pytest -q`:
+`tests/` holds 44 tests, run with `pytest -q`:
 
 - `test_reconciliation.py`: ARR roll-forward, P&L subtotals, product P&L,
   payroll to the workforce table, the cloud rule, the cash roll-forward and
@@ -96,7 +105,8 @@ in `output/decision.json`, `output/option_verdict.csv` and the memo.
   model output; page counts; no external assets; no hype words or em dashes.
 - `test_adversarial.py`: shifting every planned hire by one month changes people
   cost by exactly one seat-month per seat; the renderers contain no typed
-  figures; and the recommendation changes when the guardrail changes.
+  figures; the recommendation changes when the guardrail changes; and the
+  budget-floor sensitivity quoted in the memo matches a full re-run.
 
 `DECISIONS.md` records every modelling and design choice, including the ones
 rejected and what the adversarial tests caught.

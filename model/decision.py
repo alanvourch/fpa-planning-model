@@ -92,12 +92,20 @@ def evaluate(assumptions, roster, opening_state, months) -> dict:
                         "upside_arr_end": g.at["upside", "arr_end"], "downside_arr_end": g.at["downside", "arr_end"],
                         "downside_cash_min": g.at["downside", "cash_min"]})
     verdict = pd.DataFrame(verdict)
-    feasible = verdict[verdict["feasible"]]
+    chosen, basis = choose(verdict, min_runway, gm_floor)
+    return {"commit_units": commit_units, "grid": grid, "verdict": verdict, "chosen": chosen,
+            "basis": basis, "runs": runs, "min_runway": min_runway, "gm_floor": gm_floor}
+
+
+def choose(verdict: pd.DataFrame, min_runway: float, gm_floor: float) -> tuple[str, str]:
+    """Apply the guardrails and the objective to a verdict table (one row per
+    option, with option_id, downside_runway_min, base_gm_min, base_arr_end and
+    base_cum_burn). Also used to show how the answer moves with the runway floor."""
+    feasible = verdict[(verdict["downside_runway_min"] >= min_runway) & (verdict["base_gm_min"] >= gm_floor)]
     if feasible.empty:
         chosen = verdict.sort_values("downside_runway_min", ascending=False).iloc[0]["option_id"]
         basis = "no option satisfied both guardrails; the option with the longest downside runway is recommended"
     else:
         chosen = feasible.sort_values(["base_arr_end", "base_cum_burn"], ascending=[False, True]).iloc[0]["option_id"]
         basis = "highest base-scenario ARR at the end of the horizon among options that satisfy both guardrails"
-    return {"commit_units": commit_units, "grid": grid, "verdict": verdict, "chosen": chosen,
-            "basis": basis, "runs": runs, "min_runway": min_runway, "gm_floor": gm_floor}
+    return str(chosen), basis

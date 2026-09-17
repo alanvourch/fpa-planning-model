@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from . import assumptions as asm
+from . import assumptions as asm, decision
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "output"
@@ -32,6 +32,12 @@ def _cloud(name: str) -> pd.DataFrame:
 
 def _wf(name: str) -> pd.DataFrame:
     return pd.read_csv(OUT / "scenarios" / f"{name}_workforce.csv")
+
+
+def _span(months) -> int:
+    """Number of calendar months from the first start month to the last, inclusive."""
+    p = pd.PeriodIndex(sorted(set(months)), freq="M")
+    return int((p[-1] - p[0]).n) + 1
 
 
 def build() -> dict:
@@ -140,11 +146,16 @@ def build() -> dict:
             "base_cash_end": float(grid.at[(opt, "base"), "cash_end"]),
             "base_ebitda_18m": float(grid.at[(opt, "base"), "ebitda_18m"]),
             "plan_hires": int(grid.at[(opt, "base"), "plan_hires"]),
+            # seats listed in the hiring plan, the basis every option is compared on; the
+            # rest of plan_hires are customer success seats the engine adds from coverage
+            "listed_hires": int(a.hiring_plans.loc[a.hiring_plans["plan_id"] == a.options.at[opt, "hiring_plan"], "count"].sum()),
             "fte_end_base": float(grid.at[(opt, "base"), "fte_end"]),
             "cloud_18m_base": float(grid.at[(opt, "base"), "cloud_18m"]),
             "stranded_downside": float(grid.at[(opt, "downside"), "stranded_cost_18m"]),
             "cash_min_downside": float(grid.at[(opt, "downside"), "cash_min"]),
         }
+    for v in F["options"].values():
+        v["auto_hires_base"] = v["plan_hires"] - v["listed_hires"]
     F["feasible_options"] = [o for o, v in F["options"].items() if v["feasible"]]
     F["rejected_runway"] = [o for o, v in F["options"].items() if not v["runway_ok"]]
     F["rejected_gm"] = [o for o, v in F["options"].items() if not v["gm_ok"]]
@@ -190,12 +201,25 @@ def build() -> dict:
     if fo:
         F["front_extra_arr_base"] = fo["base_arr_end"] - c["base_arr_end"]
         F["front_runway_shortfall"] = F["min_runway"] - fo["downside_runway_min"]
-        F["front_extra_hires"] = fo["plan_hires"] - c["plan_hires"]
+        F["front_extra_hires"] = fo["listed_hires"] - c["listed_hires"]
         F["front_cash_min_downside"] = fo["cash_min_downside"]
     ho = F["options"].get("hold_commit")
     if ho:
         F["hold_arr_gap_base"] = c["base_arr_end"] - ho["base_arr_end"]
         F["hold_cash_end_gap"] = ho["base_cash_end"] - c["base_cash_end"]
+        # what the extra growth costs: base-case burn over the horizon per extra dollar of ARR
+        F["hold_burn_gap"] = c["base_cum_burn"] - ho["base_cum_burn"]
+        F["burn_per_extra_arr"] = F["hold_burn_gap"] / F["hold_arr_gap_base"]
+
+    # how the answer moves with the runway floor: the budget snapshot's floor, run
+    # through the same choice rule as the decision engine
+    F["budget_min_runway"] = asm.load_snapshot("1.0").value("min_runway_months_downside")
+    v_alt = verdict.reset_index()
+    F["budget_floor_chosen"], _ = decision.choose(v_alt, F["budget_min_runway"], F["gm_floor"])
+    F["budget_floor_chosen_label"] = a.options.at[F["budget_floor_chosen"], "label"]
+    runway_log = asm.read_changelog()
+    runway_log = runway_log[runway_log["assumption_id"] == "min_runway_months_downside"]
+    F["runway_floor_changed"] = str(runway_log["date"].iloc[-1])[:7] if len(runway_log) else None
 
     # hiring plan composition (chosen)
     F["hiring_rows"] = hiring[["role", "location", "start_month", "count", "rationale"]].to_dict("records")
@@ -209,18 +233,11 @@ def build() -> dict:
     front_plan = a.hiring_plans[a.hiring_plans["plan_id"] == "front_loaded"].merge(a.salaries[["function"]], left_on="role", right_index=True)
     F["front_hires_rd"] = int(front_plan.loc[front_plan["function"] == "R&D", "count"].sum())
     F["front_hires_total"] = int(front_plan["count"].sum())
-    F["hires_ga"] = int(by_func.get("G&A", 0))
-    front_plan = a.hiring_plans[a.hiring_plans["plan_id"] == "front_loaded"].merge(a.salaries[["function"]], left_on="role", right_index=True)
-    F["front_hires_rd"] = int(front_plan.loc[front_plan["function"] == "R&D", "count"].sum())
-    F["front_hires_total"] = int(front_plan["count"].sum())
-    F["hires_ga"] = int(by_func.get("G&A", 0))
-    front_plan = a.hiring_plans[a.hiring_plans["plan_id"] == "front_loaded"].merge(a.salaries[["function"]], left_on="role", right_index=True)
-    F["front_hires_rd"] = int(front_plan.loc[front_plan["function"] == "R&D", "count"].sum())
-    F["front_hires_total"] = int(front_plan["count"].sum())
-    F["hires_ga"] = int(by_func.get("G&A", 0))
-    front_plan = a.hiring_plans[a.hiring_plans["plan_id"] == "front_loaded"].merge(a.salaries[["function"]], left_on="role", right_index=True)
-    F["front_hires_rd"] = int(front_plan.loc[front_plan["function"] == "R&D", "count"].sum())
-    F["front_hires_total"] = int(front_plan["count"].sum())
+    F["front_last_hire_month"] = str(front_plan["start_month"].max())
+    # how long each plan takes to open its requisitions, counted from the data so the
+    # page cannot describe a four-month ramp as a quarter
+    F["hires_span_months"] = _span(hiring["start_month"])
+    F["front_rd_span_months"] = _span(front_plan.loc[front_plan["function"] == "R&D", "start_month"])
     wfb = _wf(f"{chosen}__base")
     plan_rows = wfb[wfb["origin"].str.startswith("plan:")]
     F["plan_hire_cost_18m"] = float(plan_rows["people_cost"].sum() + plan_rows["recruiting"].sum())
@@ -281,3 +298,16 @@ def signed_kusd(x: float) -> str:
 
 def month_name(m: str) -> str:
     return pd.Period(m, freq="M").strftime("%B %Y")
+
+
+def option_phrase(label: str) -> str:
+    """'Front-loaded plan with Insights contractors; one-year cloud commitment' ->
+    'the front-loaded plan with Insights contractors and a one-year cloud commitment'."""
+    parts = label.split("; ")
+    head = parts[0][0].lower() + parts[0][1:]
+    if head.endswith("plan") or " plan " in head:
+        head = "the " + head
+    tail = parts[1] if len(parts) == 2 else ""
+    if tail.startswith("cloud on demand"):
+        return f"{head} with cloud on demand"
+    return f"{head} and a {tail}" if tail else head

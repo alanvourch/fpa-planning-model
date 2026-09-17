@@ -59,7 +59,7 @@ def memo_text(F: dict) -> str:
     lines.append("")
     lines.append("## Decision")
     lines.append("")
-    lines.append(f"Adopt the phased hiring plan with a one-year cloud commitment: {F['hires_total']} hires between "
+    lines.append(f"Adopt the phased hiring plan with a one-year cloud commitment: {F['hires_total']} planned hires between "
                  f"{fx.month_name(F['first_hire_month'])} and {fx.month_name(F['last_hire_month'])} "
                  f"({F['hires_rd']} in R&D, {F['hires_sm']} in sales and marketing, {F['hires_ga']} in G&A), "
                  f"and a one-year cloud commitment of {F['commit_units']:,.0f} compute units a month at a "
@@ -83,14 +83,19 @@ def memo_text(F: dict) -> str:
                  f"({F['n_runs']} runs). Two guardrails apply: downside runway never below {F['min_runway']:.0f} months, "
                  f"and base gross margin never below {fx.pct(F['gm_floor'])}.")
     if front:
-        lines.append(f"- The front-loaded plan ({front['plan_hires']} hires plus contractors) adds only "
+        lines.append(f"- The front-loaded plan ({front['listed_hires']} planned hires plus contractors) adds only "
                      f"{fx.musd(F['front_extra_arr_base'])} of ARR by {fx.month_name(F['horizon_end'])} in the base case and "
                      f"breaches the runway guardrail in the downside: {front['downside_runway_min']:.1f} months, "
                      f"{F['front_runway_shortfall']:.1f} short of the {F['min_runway']:.0f}-month floor, with cash bottoming at {fx.musd(front['cash_min_downside'])}.")
     if hold:
-        lines.append(f"- Holding hiring keeps {fx.musd(F['hold_cash_end_gap'])} more cash but ends "
-                     f"{fx.musd(F['hold_arr_gap_base'])} lower in ARR, and leaves the Insights product without the squad "
-                     f"that its usage growth is paying for.")
+        lines.append(f"- The cost of the growth. Holding hiring also passes both guardrails. The phased plan burns "
+                     f"{fx.musd(F['hold_burn_gap'])} more over 18 months to end {fx.musd(F['hold_arr_gap_base'])} higher in ARR, "
+                     f"about USD {F['burn_per_extra_arr']:.1f} of burn per extra dollar of ARR, and gives the Insights product "
+                     f"the squad its usage growth is paying for. The Q1 2027 retention review tests that trade.")
+    if F["budget_floor_chosen"] != F["chosen"]:
+        lines.append(f"- The runway floor decides the answer. At the budget's {F['budget_min_runway']:.0f}-month floor the model "
+                     f"recommends {fx.option_phrase(F['budget_floor_chosen_label'])}; the board raised the floor to "
+                     f"{F['min_runway']:.0f} months in {fx.month_name(F['runway_floor_changed'])}.")
     if od:
         lines.append(f"- Cloud on demand fails the margin floor (base minimum {fx.pct(od['base_gm_min'], 1)}). The "
                      f"commitment saves {fx.musd(F['commit_saving_base_18m'])} over 18 months in the base case and lifts "
@@ -200,7 +205,7 @@ def slide_1(pdf, F):
     fig = plt.figure(figsize=(13.33, 7.5))
     c = F["options"][F["chosen"]]
     _title(fig, "Recommendation: " + c["label"], n=1)
-    fig.text(0.05, 0.80, _wrap(f"{F['hires_total']} hires phased from {fx.month_name(F['first_hire_month'])} to {fx.month_name(F['last_hire_month'])}, "
+    fig.text(0.05, 0.80, _wrap(f"{F['hires_total']} planned hires phased from {fx.month_name(F['first_hire_month'])} to {fx.month_name(F['last_hire_month'])}, "
              f"a one-year cloud commitment at a {fx.pct(F['commit_discount'])} discount, and the front-loaded plan held until net retention recovers.", 120),
              fontsize=13, color=INK2, va="top", linespacing=1.3)
     tiles = [
@@ -319,7 +324,7 @@ def slide_3(pdf, F):
 def slide_4(pdf, F):
     fig = plt.figure(figsize=(13.33, 7.5))
     _title(fig, "The recommended plan: cash under three scenarios",
-           _wrap(f"{F['hires_total']} hires ({F['hires_rd']} R&D, {F['hires_sm']} sales and marketing) plus a {F['commit_units']:,.0f}-unit cloud commitment. "
+           _wrap(f"{F['hires_total']} planned hires ({F['hires_rd']} R&D, {F['hires_sm']} sales and marketing) plus a {F['commit_units']:,.0f}-unit cloud commitment. "
            f"Plan people cost over 18 months: {fx.musd(F['plan_hire_cost_18m'])}.", 125), n=4)
     ax = fig.add_axes([0.07, 0.17, 0.55, 0.58])
     for sc in ("upside", "base", "downside"):
@@ -396,8 +401,28 @@ def write_board_pack(F: dict) -> Path:
     return path
 
 
+def write_og_image(F: dict) -> Path:
+    """1200x630 link preview for the case page: the recommendation and its two numbers."""
+    fig = plt.figure(figsize=(12, 6.3), dpi=100)
+    fig.text(0.06, 0.80, "HEADCOUNT AND CLOUD PLAN", fontsize=13, fontweight="bold", color=BLUE, va="top")
+    fig.text(0.06, 0.70, "Hire in phases, commit the cloud.", fontsize=34, fontweight="bold", color=INK, va="top")
+    fig.text(0.06, 0.555, "Hold the bigger plan until retention proves out.", fontsize=19, color=INK2, va="top")
+    fig.text(0.06, 0.40, _wrap(f"{fx.musd(F['chosen_base_arr_end'])} of ARR by {fx.month_name(F['horizon_end'])} in the base case, "
+             f"runway never below {F['chosen_downside_runway_min']:.0f} months in the downside. Front-loading adds "
+             f"{fx.musd(F['front_extra_arr_base'])} of ARR and breaks the {F['min_runway']:.0f}-month runway floor.", 110),
+             fontsize=13, color=INK2, va="top", linespacing=1.5)
+    fig.add_artist(plt.Line2D([0.06, 0.94], [0.21, 0.21], transform=fig.transFigure, color=LINE, linewidth=1.2))
+    fig.text(0.06, 0.13, "Alan Vourc'h   |   alanvourch.com/fpa-planning-model   |   synthetic data, real method",
+             fontsize=11.5, color=MUTED, va="top")
+    path = OUT / "og.png"
+    fig.savefig(path, dpi=100, facecolor=SURFACE, metadata={"Software": None})
+    plt.close(fig)
+    return path
+
+
 def write_all() -> dict:
     F = fx.build()
     md, pdf = write_memo(F)
     pack = write_board_pack(F)
-    return {"facts": F, "memo_md": md, "memo_pdf": pdf, "board_pack": pack}
+    og = write_og_image(F)
+    return {"facts": F, "memo_md": md, "memo_pdf": pdf, "board_pack": pack, "og": og}

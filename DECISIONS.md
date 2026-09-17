@@ -1,8 +1,7 @@
 # Decisions
 
 One entry per significant modelling or design choice: what was chosen, why,
-and what was rejected. Written during the build (September 2026) and kept
-for interview use.
+and what was rejected. Written during the build (September 2026).
 
 ## Scope and positioning
 
@@ -18,12 +17,12 @@ for interview use.
   runway" by evaluating a small grid of options (three hiring plans crossed
   with cloud on demand versus a one-year commitment) under three scenarios,
   applying two guardrails, and choosing by a stated objective. Rejected: a
-  free-form scenario tool with no recommendation, because the brief asks
-  for a memo that states a decision.
-- **No LLM anywhere.** The neighbouring close-automation project already
-  shows AI agents. This one proves the finance machinery is hand-built.
+  free-form scenario tool with no recommendation, because the executive
+  question needs a memo that states a decision.
+- **No language model in the model.** Every figure comes from finance
+  arithmetic that a test can check and a reviewer can recompute.
 - **No Power BI, no dashboards.** A single self-contained HTML page with
-  inline SVG, matching the neighbouring project's showcase page.
+  inline SVG, matching the companion budget-versus-actual case study page.
 
 ## Modelling choices
 
@@ -39,8 +38,8 @@ for interview use.
 - **New logos come from ramped sales capacity, not from a typed growth
   rate.** New customers per month equal ramped account-executive equivalents
   times logos per ramped AE times a seasonality index. Hiring an AE therefore
-  changes revenue only after the ramp, which is what the brief means by
-  hiring decisions flowing through correctly.
+  changes revenue only after the ramp, which is what it means for a hiring
+  decision to flow through to revenue.
 - **Marketing programme spend scales with the new-logo target** (cost per
   new logo). Rejected: a fixed programme budget, which would not move when the
   sales plan moves.
@@ -130,6 +129,16 @@ for interview use.
 - **The guardrail responds.** Loosening the runway floor to 6 months in
   memory switches the recommendation to the front-loaded plan; tightening it to
   40 months switches it to holding. The recommendation is computed, not typed.
+- **Hire counts compared on one basis.** An earlier version of the memo and
+  page set the phased plan's listed seats (22) against the front-loaded
+  plan's total including automatic customer success hires (31). Every
+  comparison now uses listed seats (22 against 29), and the page states the
+  automatic hires separately.
+- **The answer's sensitivity is shown, not hidden.** The memo and page state
+  what the model recommends at the budget snapshot's 12-month runway floor,
+  using the same choice rule as the decision engine (`decision.choose`), and
+  the burn per extra dollar of ARR against holding hiring. A test re-runs the
+  full engine at the budget floor and checks it agrees.
 
 ## Deliverables
 

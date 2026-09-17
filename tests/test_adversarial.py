@@ -116,3 +116,15 @@ def test_recommendation_responds_to_the_guardrail(world, opening, months, decisi
     strict = a.with_override("min_runway_months_downside", 40.0, "all")
     d3 = decision_mod.evaluate(strict, world["roster"], opening, months)
     assert d3["chosen"] == "hold_commit"
+
+
+def test_budget_floor_sensitivity_matches_a_full_rerun(world, opening, months, decision):
+    # the memo and page quote what the model picks at the budget's runway floor;
+    # that shortcut must agree with running the whole engine at that floor
+    from model import facts as fx
+    F = fx.build()
+    a = world["assumptions"]
+    at_budget_floor = a.with_override("min_runway_months_downside", F["budget_min_runway"], "all")
+    d = decision_mod.evaluate(at_budget_floor, world["roster"], opening, months)
+    assert d["chosen"] == F["budget_floor_chosen"]
+    assert F["budget_floor_chosen"] != F["chosen"]

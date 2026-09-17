@@ -4,7 +4,7 @@ To: CEO, VP Engineering, Board finance committee. From: FP&A. Date: 2026-09-17. 
 
 ## Decision
 
-Adopt the phased hiring plan with a one-year cloud commitment: 22 hires between October 2026 and May 2027 (14 in R&D, 7 in sales and marketing, 1 in G&A), and a one-year cloud commitment of 444,820 compute units a month at a 25% discount. Hold the front-loaded plan and the Insights contractor push until net retention recovers.
+Adopt the phased hiring plan with a one-year cloud commitment: 22 planned hires between October 2026 and May 2027 (14 in R&D, 7 in sales and marketing, 1 in G&A), and a one-year cloud commitment of 444,820 compute units a month at a 25% discount. Hold the front-loaded plan and the Insights contractor push until net retention recovers.
 
 ## Where we stand
 
@@ -13,8 +13,9 @@ ARR is USD 24.3M at end August 2026, up 41% year on year, with USD 24.8M of cash
 ## Why this option
 
 - 6 options were run through the same drivers under base, upside and downside (18 runs). Two guardrails apply: downside runway never below 18 months, and base gross margin never below 74%.
-- The front-loaded plan (31 hires plus contractors) adds only USD 1.7M of ARR by February 2028 in the base case and breaches the runway guardrail in the downside: 16.9 months, 1.1 short of the 18-month floor, with cash bottoming at USD 10.7M.
-- Holding hiring keeps USD 4.5M more cash but ends USD 2.2M lower in ARR, and leaves the Insights product without the squad that its usage growth is paying for.
+- The front-loaded plan (29 planned hires plus contractors) adds only USD 1.7M of ARR by February 2028 in the base case and breaches the runway guardrail in the downside: 16.9 months, 1.1 short of the 18-month floor, with cash bottoming at USD 10.7M.
+- The cost of the growth. Holding hiring also passes both guardrails. The phased plan burns USD 4.5M more over 18 months to end USD 2.2M higher in ARR, about USD 2.1 of burn per extra dollar of ARR, and gives the Insights product the squad its usage growth is paying for. The Q1 2027 retention review tests that trade.
+- The runway floor decides the answer. At the budget's 12-month floor the model recommends the front-loaded plan with Insights contractors and a one-year cloud commitment; the board raised the floor to 18 months in September 2026.
 - Cloud on demand fails the margin floor (base minimum 72.9%). The commitment saves USD 0.8M over 18 months in the base case and lifts the minimum gross margin by 2.0 points; the downside strands USD 178k of committed units, which is the price of the floor.
 
 ## Scenarios for the recommended plan

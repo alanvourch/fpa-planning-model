@@ -7,7 +7,7 @@ for interview use.
 ## Scope and positioning
 
 - **Company: a fictional B2B SaaS scale-up, "Northlight Software".** Series C,
-  about USD 26M ARR at August 2026, about 150 people across Montréal (HQ,
+  about USD 24M ARR at August 2026, about 140 people across Montréal (HQ,
   engineering, G&A), Paris (engineering) and Austin (go-to-market). Reporting
   currency USD, salaries stated in USD equivalents. Rejected: a Canadian-dollar
   reporting entity, which would have added a planning-rate layer without
@@ -121,6 +121,12 @@ for interview use.
   none. The engine was right and the test was wrong; the test now also checks
   that the vacancy allowance shrinks in proportion and that recruiting and
   equipment costs move rather than vanish.
+- **Known looseness of the number tracer.** The allowed set admits twelve
+  renderings of every fact (raw, thousands, millions, percent, at zero to two
+  decimals) and every numeric token in the assumption, salary and change-log
+  tables, and axis tick labels are exempt. A small typed integer such as 12 or
+  45 could therefore pass by coincidence. The typed-figure sniff on the
+  renderer source is the second net for exactly that case.
 - **The guardrail responds.** Loosening the runway floor to 6 months in
   memory switches the recommendation to the front-loaded plan; tightening it to
   40 months switches it to holding. The recommendation is computed, not typed.

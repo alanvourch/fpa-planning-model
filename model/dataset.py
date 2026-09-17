@@ -4,8 +4,8 @@ dates, and the P&L, ARR, cloud and cash that follow from them, plus the FY2026
 budget as it was locked in December 2025 (assumption snapshot v1.0).
 
 Everything is generated from one fixed seed. The realized drivers deviate from
-the budget in six planted ways, documented in data/planted_deviations.md and
-recovered by the actual-versus-plan bridge:
+the budget in six planted ways, listed here (this docstring is the answer key
+that tests/test_bridge.py checks against) and recovered by the bridge:
 
   1. New logos per ramped account executive ran at 0.92 against 1.10 budgeted
   2. Gross retention fell to 87.5% (annualized) in H1 2026 against 90%; net

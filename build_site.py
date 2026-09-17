@@ -148,8 +148,10 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
     slot = ph / len(rows)
     bh = min(22, slot * 0.6)
     out = [f'<svg class="chart" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(floor_label)} by option">']
-    for i, (label, v, ok) in enumerate(rows):
-        y = mt + slot * i + (slot - bh) / 2
+    ys = [mt + slot * i + (slot - bh) / 2 for i in range(len(rows))]
+    # layer order: bars, then the floor line across them, then value labels with a
+    # surface-coloured halo so the line never runs through a label
+    for (label, v, ok), y in zip(rows, ys):
         parts = label.replace("Front-loaded plan with Insights contractors", "Front-loaded + contractors").split("; ")
         if len(parts) == 2:
             out.append(f'<text x="{ml - 8}" y="{y + bh / 2 - 2:.1f}" text-anchor="end" class="tick">{html.escape(parts[0])}</text>')
@@ -157,10 +159,10 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
         else:
             out.append(f'<text x="{ml - 8}" y="{y + bh / 2 + 4:.1f}" text-anchor="end" class="tick">{html.escape(label)}</text>')
         out.append(f'<rect x="{ml}" y="{y:.1f}" width="{max(1, sx(v) - ml):.1f}" height="{bh:.1f}" fill="{BLUE if ok else RED}" rx="3"><title>{html.escape(label)}: {fmt(v)}</title></rect>')
-        # surface-coloured halo so the floor line never runs through a value label
-        out.append(f'<text x="{sx(v) + 6:.1f}" y="{y + bh / 2 + 4:.1f}" class="tick" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">{fmt(v)}</text>')
     out.append(f'<line x1="{sx(floor):.1f}" x2="{sx(floor):.1f}" y1="{mt}" y2="{mt + ph}" stroke="#171715" stroke-width="1.2"/>')
     out.append(f'<text x="{sx(floor) + 4:.1f}" y="{height - 8}" class="tick">{html.escape(floor_label)}</text>')
+    for (label, v, ok), y in zip(rows, ys):
+        out.append(f'<text x="{sx(v) + 6:.1f}" y="{y + bh / 2 + 4:.1f}" class="tick" paint-order="stroke" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">{fmt(v)}</text>')
     out.append("</svg>")
     return "".join(out)
 

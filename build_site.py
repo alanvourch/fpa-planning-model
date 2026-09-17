@@ -169,7 +169,10 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
 
 def table(headers: list, rows: list, cls: str = "tbl") -> str:
     h = "".join(f"<th>{html.escape(str(x))}</th>" for x in headers)
-    b = "".join("<tr>" + "".join(f"<td>{x if isinstance(x, str) and x.startswith('<') else html.escape(str(x))}</td>" for x in r) + "</tr>" for r in rows)
+    # data-label carries the column header into each cell, so on phones every row
+    # can be shown as a stacked block of label and value pairs instead of a wide table
+    b = "".join("<tr>" + "".join(f'<td data-label="{html.escape(str(hd))}">{x if isinstance(x, str) and x.startswith("<") else html.escape(str(x))}</td>'
+                                 for hd, x in zip(headers, r)) + "</tr>" for r in rows)
     return f'<div class="tblwrap"><table class="{cls}"><thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>'
 
 
@@ -268,13 +271,13 @@ def build() -> Path:
   .btn.primary {{ background:var(--accent); border-color:var(--accent); color:#fff; }}
   .btn.primary:hover {{ background:var(--accent-ink); }}
   .btn:hover {{ border-color:var(--muted); }}
-  .stats {{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:26px; }}
+  .stats {{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:26px; }}
   .stat {{ border-left:3px solid var(--accent); padding:4px 0 4px 14px; }}
   .stat b {{ display:block; font-size:22px; color:var(--ink); line-height:1.1; }}
   .stat span {{ font-size:13.5px; color:var(--muted); }}
   .card {{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--card-shadow); }}
-  .two {{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:24px; align-items:start; }}
-  .tiles {{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }}
+  .two {{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:22px; margin-top:24px; align-items:start; }}
+  .tiles {{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:24px; }}
   .tile {{ border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:20px; }}
   .tile h3 {{ margin-bottom:5px; }}
   .tile p {{ font-size:14px; color:var(--muted); }}
@@ -284,7 +287,9 @@ def build() -> Path:
   .tile.fail .tag {{ background:#fbeaea; color:#a12626; }}
   .proof {{ margin-top:16px; background:var(--warn-bg); border:1px solid var(--warn-line); border-radius:12px; padding:18px 20px; }}
   .proof b {{ color:var(--ink); }}
-  .flow {{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:26px; }}
+  .flow {{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin-top:26px; }}
+  /* grid children may shrink below their content width, so wide tables and code scroll inside their own box instead of widening the page on phones */
+  .stats > *, .two > *, .tiles > *, .flow > * {{ min-width:0; }}
   .node {{ position:relative; border-radius:12px; padding:16px 14px; border:1px solid var(--line); background:var(--surface); }}
   .node .role {{ font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px; display:inline-block; padding:2px 7px; border-radius:5px; background:var(--sys-bg); color:var(--sys-ink); }}
   .node.you {{ border-color:var(--accent); background:var(--accent-soft); }}
@@ -315,8 +320,18 @@ def build() -> Path:
   .about .title {{ color:var(--muted); font-size:14px; display:block; }}
   .contact {{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }}
   footer {{ border-top:1px solid var(--line); padding:30px 0 54px; font-size:13px; color:var(--muted); }}
-  @media (max-width:820px) {{ .flow {{ grid-template-columns:1fr; }} .node::after {{ content:"\\2193"; right:50%; top:auto; bottom:-15px; transform:translateX(50%); }} .two {{ grid-template-columns:1fr; }} }}
-  @media (max-width:640px) {{ .stats {{ grid-template-columns:repeat(2,1fr); }} .tiles {{ grid-template-columns:1fr; }} }}
+  @media (max-width:820px) {{ .flow {{ grid-template-columns:minmax(0,1fr); }} .node::after {{ content:"\\2193"; right:50%; top:auto; bottom:-15px; transform:translateX(50%); }} .two {{ grid-template-columns:minmax(0,1fr); }} }}
+  @media (max-width:640px) {{ .stats {{ grid-template-columns:repeat(2,minmax(0,1fr)); }} .tiles {{ grid-template-columns:minmax(0,1fr); }}
+    .card {{ padding:18px 16px; }}
+    .tblwrap {{ overflow-x:visible; }}
+    table.tbl, .tbl tbody, .tbl tr, .tbl td {{ display:block; width:100%; }}
+    .tbl thead {{ display:none; }}
+    .tbl tr {{ padding:10px 12px; border-bottom:1px solid var(--line); }}
+    .tbl tr:last-child {{ border-bottom:none; }}
+    .tbl td {{ display:grid; grid-template-columns:minmax(0,42%) minmax(0,1fr); gap:10px; padding:3px 0; border-bottom:none; font-size:13px; overflow-wrap:anywhere; }}
+    .tbl td::before {{ content:attr(data-label); color:var(--muted); font-size:12px; font-weight:600; }}
+    .tbl td:first-child {{ font-weight:700; color:var(--ink); }}
+    pre {{ white-space:pre-wrap; overflow-wrap:anywhere; padding:14px 14px; }} }}
 </style>
 </head>
 <body>

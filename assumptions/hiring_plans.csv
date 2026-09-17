@@ -1,0 +1,40 @@
+plan_id,role,location,start_month,count,rationale
+phased,Senior Software Engineer,Montreal,2026-10,2,Platform reliability squad
+phased,Software Engineer,Montreal,2026-11,2,Platform reliability squad
+phased,Software Engineer,Paris,2026-11,2,Insights data pipeline squad
+phased,Data Engineer,Paris,2027-01,2,Insights data pipeline squad
+phased,Senior Software Engineer,Paris,2027-02,1,Insights data pipeline squad lead
+phased,Software Engineer,Montreal,2027-03,2,Integrations squad
+phased,Product Manager,Montreal,2027-01,1,Insights product owner
+phased,Software Engineer,Paris,2027-05,2,Integrations squad
+phased,Account Executive,Austin,2026-10,1,Mid-market pod
+phased,Account Executive,Austin,2027-01,2,Mid-market pod
+phased,Account Executive,Austin,2027-04,1,Mid-market pod
+phased,Sales Development Rep,Austin,2027-01,2,Pipeline coverage for new AEs
+phased,Marketing Manager,Austin,2027-02,1,Demand generation for Insights
+phased,Finance & Operations,Montreal,2027-01,1,Planning and billing operations
+front_loaded,Senior Software Engineer,Montreal,2026-10,2,Platform reliability squad
+front_loaded,Software Engineer,Montreal,2026-10,2,Platform reliability squad
+front_loaded,Software Engineer,Paris,2026-10,2,Insights data pipeline squad
+front_loaded,Data Engineer,Paris,2026-11,2,Insights data pipeline squad
+front_loaded,Senior Software Engineer,Paris,2026-11,1,Insights data pipeline squad lead
+front_loaded,Software Engineer,Montreal,2026-11,2,Integrations squad
+front_loaded,Product Manager,Montreal,2026-10,1,Insights product owner
+front_loaded,Software Engineer,Paris,2026-12,2,Integrations squad
+front_loaded,Software Engineer,Paris,2026-12,2,Additional Insights capacity
+front_loaded,Senior Software Engineer,Montreal,2027-01,2,Additional platform capacity
+front_loaded,Account Executive,Austin,2026-10,2,Mid-market pod
+front_loaded,Account Executive,Austin,2026-11,2,Mid-market pod
+front_loaded,Account Executive,Austin,2027-01,2,Enterprise pod
+front_loaded,Sales Development Rep,Austin,2026-11,3,Pipeline coverage for new AEs
+front_loaded,Marketing Manager,Austin,2026-11,1,Demand generation for Insights
+front_loaded,Finance & Operations,Montreal,2027-01,1,Planning and billing operations
+fy2026_budget,Software Engineer,Montreal,2026-01,3,FY2026 budget: platform squad
+fy2026_budget,Senior Software Engineer,Montreal,2026-02,2,FY2026 budget: platform squad
+fy2026_budget,Software Engineer,Paris,2026-02,3,FY2026 budget: Insights squad
+fy2026_budget,Data Engineer,Paris,2026-03,2,FY2026 budget: Insights squad
+fy2026_budget,Account Executive,Austin,2026-01,2,FY2026 budget: mid-market pod
+fy2026_budget,Sales Development Rep,Austin,2026-02,1,FY2026 budget: pipeline coverage
+fy2026_budget,Marketing Manager,Austin,2026-04,1,FY2026 budget: demand generation
+fy2026_budget,Customer Success Manager,Austin,2026-03,2,FY2026 budget: coverage
+fy2026_budget,Finance & Operations,Montreal,2026-02,1,FY2026 budget: billing operations

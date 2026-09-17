@@ -1,0 +1,40 @@
+id,category,name,unit,base,upside,downside,source_type,source
+logos_per_ramped_ae_month,revenue,New customers won per fully ramped account executive per month,logos/AE/month,0.90,1.10,0.50,judgment,Base set at the trailing 2026 actual (0.92). Downside is a 45% productivity shortfall (pipeline does not rebuild). No external source.
+initial_acv_usd,revenue,Annual contract value of a new Platform customer,USD/year,38000,38000,38000,judgment,"Chosen inside the USD 25k-50k ACV band so retention benchmarks for that band apply (SaaS Capital, Research Brief 32, 2025)."
+nrr_annual,revenue,Net revenue retention (annual all-in including the January price increase) on the Platform base,ratio,1.05,1.10,0.96,benchmark,"SaaS Capital, 2025 B2B SaaS Retention Benchmarks (Research Brief 32, 1,000+ companies): median NRR 102% for USD 25k-50k ACV, 104% for USD 50k-100k, 101% overall. Base 105% sits at the top of that median range; downside 96% sits just below the 25th percentile for USD 25k-50k ACV (97%)."
+grr_annual,revenue,Gross revenue retention (annual),ratio,0.90,0.92,0.86,benchmark,"SaaS Capital, 2025 B2B SaaS Retention Benchmarks: median GRR 91% for USD 25k-50k ACV, 90% overall. Downside 86% is a judgment call below the median."
+price_increase_pct_jan,revenue,Price increase applied to existing Platform ARR every January,ratio,0.05,0.07,0.03,judgment,Company pricing policy assumption. No external source.
+attach_gain_pts_month,revenue,Monthly gain in the Insights add-on attach rate,percentage points/month,0.60,0.90,0.20,judgment,Product roadmap assumption. No external source.
+attach_rate_cap,revenue,Ceiling on the Insights attach rate,ratio,0.45,0.45,0.45,judgment,Product assumption. No external source.
+insights_usage_growth_month,revenue,Monthly growth in Insights revenue per customer from usage,ratio/month,0.010,0.015,0.005,judgment,Usage-based pricing assumption. No external source.
+ae_ramp_months,revenue,Months for a new account executive to reach full productivity,months,4,4,4,judgment,Common sales-planning convention. No external source.
+csm_ramp_months,cost_of_revenue,Months for a new customer success manager to carry a full book,months,2,2,2,judgment,Planning convention. No external source.
+customers_per_csm,cost_of_revenue,Customers carried per fully ramped customer success manager,customers/CSM,45,45,45,judgment,Coverage-ratio assumption for a mid-market book. No external source.
+cloud_units_per_platform_customer,cost_of_revenue,Compute units consumed per Platform customer per month,units/customer/month,200,200,200,judgment,Internal usage metric. No external source.
+cloud_units_per_insights_customer,cost_of_revenue,Compute units consumed per Insights customer per month,units/customer/month,2000,2000,2000,judgment,Internal usage metric. Raised from 1500 to 2000 in v1.2 after the March 2026 usage step-up observed in actuals.
+cloud_unit_price_usd,cost_of_revenue,On-demand price per compute unit,USD/unit,0.42,0.40,0.46,judgment,Blended provider list price for the company's instance mix. No external source.
+cloud_unit_price_drift_month,cost_of_revenue,Monthly drift in the on-demand unit price,ratio/month,-0.002,-0.003,0.000,judgment,Assumed slow price erosion. No external source.
+cloud_fixed_month_usd,cost_of_revenue,Fixed monthly cloud costs (networking and observability),USD/month,28000,28000,28000,judgment,Internal contract values. No external source.
+cloud_commit_discount,cost_of_revenue,Discount on committed compute units under a one-year commitment,ratio,0.25,0.25,0.25,judgment,Judgment call inside the discount range commonly quoted for one-year public-cloud commitments. No external source read for this figure.
+cloud_commit_coverage,cost_of_revenue,Share of expected base-scenario units covered by the commitment,ratio,0.85,0.85,0.85,judgment,Sizing rule chosen to limit stranded commitment in the downside. No external source.
+third_party_cogs_pct_rev,cost_of_revenue,Third-party software and data fees as a share of revenue,ratio,0.03,0.03,0.03,benchmark,"SaaS Capital, 2026 Spending Benchmarks for Private B2B SaaS Companies (survey of 1,000+ companies, March 2026): median 'Other CoGS' 3% of ARR."
+payment_processing_pct_monthly_billed,cost_of_revenue,Payment processing fees on monthly-billed revenue,ratio,0.025,0.025,0.025,judgment,Card-processing rate assumption. No external source.
+sales_commission_pct_new_arr,opex,Sales commission as a share of new and expansion ARR,ratio,0.10,0.10,0.10,judgment,Compensation plan assumption. No external source.
+marketing_program_cost_per_new_logo,opex,Marketing programme spend per new customer target,USD/logo,30000,28000,33000,judgment,"Calibrated so that S&M lands near the equity-backed benchmark (SaaS Capital 2026: median sales 15% and marketing 8% of ARR, equity-backed companies spend materially more). Own judgment."
+rd_tooling_per_head_month,opex,R&D tooling and cloud development spend per R&D head,USD/head/month,450,450,450,judgment,Internal vendor stack. No external source.
+rd_contractors_month,opex,R&D contractor spend per month (baseline),USD/month,60000,60000,60000,judgment,Existing contractor agreements. No external source.
+ga_software_per_employee_month,opex,Company-wide software seats per employee,USD/employee/month,180,180,180,judgment,Internal vendor stack. No external source.
+ga_fixed_month_usd,opex,Fixed G&A (audit legal insurance) per month,USD/month,75000,75000,75000,judgment,Internal contract values. No external source.
+bonus_pct_non_sales,opex,Bonus accrual for non-sales staff as a share of salary,ratio,0.08,0.08,0.08,judgment,Compensation policy assumption. No external source.
+merit_increase_pct_jan,opex,Annual merit increase applied every January,ratio,0.035,0.035,0.035,judgment,Compensation policy assumption. No external source.
+attrition_annual,opex,Annual voluntary attrition applied as a vacancy allowance,ratio,0.12,0.12,0.12,judgment,Planning assumption for a scale-up technology workforce. No external source.
+backfill_lag_months,opex,Months a vacated seat stays open before the backfill starts,months,2,2,2,judgment,Recruiting cycle assumption. No external source.
+recruiting_cost_pct_salary,opex,One-time recruiting cost per hire as a share of salary,ratio,0.15,0.15,0.15,judgment,Agency and internal recruiting cost assumption. No external source.
+capex_per_new_hire_usd,cash,Equipment purchased per new hire (cash not P&L),USD/hire,3500,3500,3500,judgment,Laptop and peripherals. No external source.
+annual_upfront_billing_share,cash,Share of ARR billed annually in advance,ratio,0.40,0.40,0.40,judgment,Contract mix assumption. No external source.
+dso_days,cash,Days sales outstanding on billed revenue,days,45,45,45,judgment,Collections assumption. No external source.
+min_runway_months_downside,guardrail,Minimum cash runway at any month of the downside scenario,months,18,18,18,judgment,Board guardrail. No external source.
+gross_margin_floor,guardrail,Minimum monthly blended gross margin in the base scenario,ratio,0.74,0.74,0.74,benchmark,"Benchmarkit 2025 SaaS Performance Metrics: median total-revenue gross margin 77% and subscription gross margin 81% (2024 data). Floor set 3 points below the total-revenue median: own judgment."
+materiality_abs_usd,materiality,Bridge component is material above this absolute EBITDA impact (with the percentage test),USD,25000,25000,25000,judgment,Reporting policy. No external source.
+materiality_pct,materiality,Bridge component is material above this share of the budget line (with the absolute test),ratio,0.03,0.03,0.03,judgment,Reporting policy. No external source.
+materiality_abs_override_usd,materiality,Bridge component is material above this absolute impact regardless of percentage,USD,100000,100000,100000,judgment,Reporting policy. No external source.

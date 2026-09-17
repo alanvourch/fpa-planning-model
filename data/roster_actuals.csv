@@ -1,0 +1,165 @@
+position_id,role,function,cost_bucket,sales_role,location,start,end,salary,origin
+emp-0000,Software Engineer,R&D,R&D,False,Montreal,2021-10,,90194.32182244347,roster
+emp-0001,Software Engineer,R&D,R&D,False,Montreal,2022-09,,94246.22889800959,roster
+emp-0002,Software Engineer,R&D,R&D,False,Montreal,2022-07,2025-04,88506.95717784532,roster
+emp-0003,Software Engineer,R&D,R&D,False,Montreal,2022-07,,101596.79961645397,roster
+emp-0004,Software Engineer,R&D,R&D,False,Montreal,2021-01,,97863.86563170952,roster
+emp-0005,Software Engineer,R&D,R&D,False,Montreal,2022-11,,90875.20387447844,roster
+emp-0006,Software Engineer,R&D,R&D,False,Montreal,2024-02,,90028.2329753056,roster
+emp-0007,Software Engineer,R&D,R&D,False,Montreal,2019-10,,101638.43822519384,roster
+emp-0008,Software Engineer,R&D,R&D,False,Montreal,2020-12,2026-06,87841.6874093129,roster
+emp-0009,Software Engineer,R&D,R&D,False,Montreal,2021-07,,97047.35878505114,roster
+emp-0010,Software Engineer,R&D,R&D,False,Montreal,2020-06,,99244.60957870708,roster
+emp-0011,Software Engineer,R&D,R&D,False,Montreal,2024-04,,88145.51006498987,roster
+emp-0012,Software Engineer,R&D,R&D,False,Montreal,2024-06,,90156.9324725073,roster
+emp-0013,Software Engineer,R&D,R&D,False,Montreal,2020-07,2026-09,88725.36579013959,roster
+emp-0014,Software Engineer,R&D,R&D,False,Montreal,2021-12,,101997.38780530033,roster
+emp-0015,Senior Software Engineer,R&D,R&D,False,Montreal,2021-12,,125498.57380270452,roster
+emp-0016,Senior Software Engineer,R&D,R&D,False,Montreal,2020-06,2025-11,121291.36174101538,roster
+emp-0017,Senior Software Engineer,R&D,R&D,False,Montreal,2022-07,,119356.98939713118,roster
+emp-0018,Senior Software Engineer,R&D,R&D,False,Montreal,2020-03,,119118.73879130643,roster
+emp-0019,Senior Software Engineer,R&D,R&D,False,Montreal,2020-02,,132484.32502076053,roster
+emp-0020,Senior Software Engineer,R&D,R&D,False,Montreal,2020-11,2025-05,125150.98795206011,roster
+emp-0021,Senior Software Engineer,R&D,R&D,False,Montreal,2024-05,,122572.76648494983,roster
+emp-0022,Senior Software Engineer,R&D,R&D,False,Montreal,2020-01,,129081.86630545238,roster
+emp-0023,Senior Software Engineer,R&D,R&D,False,Montreal,2022-06,,134342.07238418734,roster
+emp-0024,Senior Software Engineer,R&D,R&D,False,Montreal,2021-02,,116737.94789407049,roster
+emp-0025,Engineering Manager,R&D,R&D,False,Montreal,2024-04,2026-06,163114.45570567847,roster
+emp-0026,Engineering Manager,R&D,R&D,False,Montreal,2020-09,,160651.7513744944,roster
+emp-0027,Engineering Manager,R&D,R&D,False,Montreal,2023-02,2024-11,164261.5629296828,roster
+emp-0028,Product Manager,R&D,R&D,False,Montreal,2019-02,,119456.92930073246,roster
+emp-0029,Product Manager,R&D,R&D,False,Montreal,2021-10,,123621.95186596987,roster
+emp-0030,Product Manager,R&D,R&D,False,Montreal,2021-04,2025-01,119201.7321287842,roster
+emp-0031,Product Designer,R&D,R&D,False,Montreal,2019-02,,96181.6373665091,roster
+emp-0032,Product Designer,R&D,R&D,False,Montreal,2022-08,,92032.65033258387,roster
+emp-0033,Data Engineer,R&D,R&D,False,Montreal,2021-10,,126096.24994802604,roster
+emp-0034,Data Engineer,R&D,R&D,False,Montreal,2021-06,,123759.11801033399,roster
+emp-0035,Software Engineer,R&D,R&D,False,Paris,2021-04,,81992.68358366509,roster
+emp-0036,Software Engineer,R&D,R&D,False,Paris,2020-05,,87090.63611073347,roster
+emp-0037,Software Engineer,R&D,R&D,False,Paris,2021-10,,75069.39685997901,roster
+emp-0038,Software Engineer,R&D,R&D,False,Paris,2023-09,,87544.50923054657,roster
+emp-0039,Software Engineer,R&D,R&D,False,Paris,2023-12,,75606.11445243706,roster
+emp-0040,Software Engineer,R&D,R&D,False,Paris,2021-08,,78033.45105023458,roster
+emp-0041,Senior Software Engineer,R&D,R&D,False,Paris,2022-05,,99400.41272600018,roster
+emp-0042,Senior Software Engineer,R&D,R&D,False,Paris,2023-11,,108468.40806504962,roster
+emp-0043,Senior Software Engineer,R&D,R&D,False,Paris,2019-03,,104042.48568753741,roster
+emp-0044,Senior Software Engineer,R&D,R&D,False,Paris,2022-10,,103778.62061864045,roster
+emp-0045,Senior Software Engineer,R&D,R&D,False,Paris,2022-09,,113877.97467732955,roster
+emp-0046,Senior Software Engineer,R&D,R&D,False,Paris,2021-12,,100434.3034212943,roster
+emp-0047,Engineering Manager,R&D,R&D,False,Paris,2022-01,,120521.30139492618,roster
+emp-0048,Product Manager,R&D,R&D,False,Paris,2023-02,2026-03,100320.66346695789,roster
+emp-0049,Data Engineer,R&D,R&D,False,Paris,2024-03,,95407.10482870627,roster
+emp-0050,Data Engineer,R&D,R&D,False,Paris,2021-11,,102633.32604059562,roster
+emp-0051,Site Reliability Engineer,Customer Operations,COGS,False,Montreal,2020-10,,126081.78182761492,roster
+emp-0052,Site Reliability Engineer,Customer Operations,COGS,False,Montreal,2019-01,,123266.18200921522,roster
+emp-0053,Site Reliability Engineer,Customer Operations,COGS,False,Montreal,2019-10,2026-09,130028.20055128298,roster
+emp-0054,Site Reliability Engineer,Customer Operations,COGS,False,Paris,2020-07,,101265.56184852758,roster
+emp-0055,Customer Success Manager,Customer Operations,COGS,False,Austin,2021-05,,83486.91040277731,roster
+emp-0056,Customer Success Manager,Customer Operations,COGS,False,Austin,2021-01,2026-03,86679.11738055244,roster
+emp-0057,Customer Success Manager,Customer Operations,COGS,False,Austin,2021-09,,88659.11473758353,roster
+emp-0058,Customer Success Manager,Customer Operations,COGS,False,Austin,2024-05,,91336.94725062726,roster
+emp-0059,Customer Success Manager,Customer Operations,COGS,False,Austin,2020-09,,97556.17535840235,roster
+emp-0060,Customer Success Manager,Customer Operations,COGS,False,Austin,2023-08,,84862.67764754416,roster
+emp-0061,Customer Success Manager,Customer Operations,COGS,False,Austin,2024-04,2025-07,95495.60331742324,roster
+emp-0062,Customer Success Manager,Customer Operations,COGS,False,Montreal,2020-01,2026-06,80194.01564127265,roster
+emp-0063,Customer Success Manager,Customer Operations,COGS,False,Montreal,2022-03,,73471.52894278818,roster
+emp-0064,Customer Success Manager,Customer Operations,COGS,False,Montreal,2021-03,,78399.13213293624,roster
+emp-0065,Customer Success Manager,Customer Operations,COGS,False,Montreal,2024-04,,70658.68850943139,roster
+emp-0066,Support Engineer,Customer Operations,COGS,False,Montreal,2022-01,,65744.39100713244,roster
+emp-0067,Support Engineer,Customer Operations,COGS,False,Montreal,2019-11,,60747.26410207222,roster
+emp-0068,Support Engineer,Customer Operations,COGS,False,Montreal,2020-02,,60551.38262066884,roster
+emp-0069,Support Engineer,Customer Operations,COGS,False,Montreal,2022-07,,62941.238314733935,roster
+emp-0070,Support Engineer,Customer Operations,COGS,False,Montreal,2021-06,2025-06,66781.37804246112,roster
+emp-0071,Support Engineer,Customer Operations,COGS,False,Montreal,2023-12,,61885.25990031631,roster
+emp-0072,Support Engineer,Customer Operations,COGS,False,Montreal,2020-06,,69981.1699901021,roster
+emp-0073,Account Executive,S&M,S&M,True,Austin,2020-06,,115070.8327114021,roster
+emp-0074,Account Executive,S&M,S&M,True,Austin,2019-12,,120064.45976584591,roster
+emp-0075,Account Executive,S&M,S&M,True,Austin,2022-04,,113329.4159057528,roster
+emp-0076,Account Executive,S&M,S&M,True,Austin,2019-07,,102874.25807626307,roster
+emp-0077,Account Executive,S&M,S&M,True,Austin,2020-11,,108983.19021318987,roster
+emp-0078,Account Executive,S&M,S&M,True,Austin,2019-08,2026-01,101984.20988769883,roster
+emp-0079,Account Executive,S&M,S&M,True,Austin,2022-10,,109491.66208930105,roster
+emp-0080,Sales Development Rep,S&M,S&M,True,Austin,2024-05,,63679.11916469513,roster
+emp-0081,Sales Development Rep,S&M,S&M,True,Austin,2021-01,,67606.36840786804,roster
+emp-0082,Sales Development Rep,S&M,S&M,True,Austin,2021-10,2025-05,69822.57242308263,roster
+emp-0083,Sales Development Rep,S&M,S&M,True,Austin,2021-09,2025-06,64603.57063009856,roster
+emp-0084,Sales Development Rep,S&M,S&M,True,Austin,2021-07,,66161.20494498416,roster
+emp-0085,Marketing Manager,S&M,S&M,False,Austin,2023-04,,119225.45978263719,roster
+emp-0086,Marketing Manager,S&M,S&M,False,Austin,2023-06,,129106.89263710931,roster
+emp-0087,Marketing Manager,S&M,S&M,False,Austin,2021-12,,128089.2770234299,roster
+emp-0088,Marketing Manager,S&M,S&M,False,Austin,2023-03,2026-03,111998.93482327413,roster
+emp-0089,Marketing Manager,S&M,S&M,False,Austin,2024-08,,121272.49508483446,roster
+emp-0090,Marketing Manager,S&M,S&M,False,Montreal,2024-07,,97928.51202263792,roster
+emp-0091,Finance & Operations,G&A,G&A,False,Montreal,2023-01,,92712.67096425328,roster
+emp-0092,Finance & Operations,G&A,G&A,False,Montreal,2023-09,2025-05,94780.99258787702,roster
+emp-0093,Finance & Operations,G&A,G&A,False,Montreal,2023-07,,88659.30184540198,roster
+emp-0094,Finance & Operations,G&A,G&A,False,Montreal,2019-05,,98331.15598904257,roster
+emp-0095,Finance & Operations,G&A,G&A,False,Montreal,2023-05,,86802.19630453763,roster
+emp-0096,People & Talent,G&A,G&A,False,Montreal,2021-04,,89497.32373591568,roster
+emp-0097,People & Talent,G&A,G&A,False,Montreal,2022-02,2026-06,90404.47459399275,roster
+emp-0098,People & Talent,G&A,G&A,False,Montreal,2019-06,,89329.08645022326,roster
+emp-0099,Executive,G&A,G&A,False,Montreal,2020-01,,237623.22565859888,roster
+emp-0100,Executive,G&A,G&A,False,Montreal,2024-02,,226264.29300564626,roster
+emp-0101,Executive,G&A,G&A,False,Montreal,2021-07,,227807.66110946244,roster
+emp-0102,Executive,G&A,G&A,False,Montreal,2023-09,,225870.44797612575,roster
+emp-0103,Executive,G&A,G&A,False,Austin,2020-04,,275863.7839389264,roster
+emp-0104,Software Engineer,R&D,R&D,False,Montreal,2024-10,,93108.50466857184,roster
+emp-0105,Account Executive,S&M,S&M,True,Austin,2024-11,,114179.59161904352,roster
+emp-0106,Software Engineer,R&D,R&D,False,Paris,2024-11,,82345.45097745897,roster
+emp-0107,Software Engineer,R&D,R&D,False,Montreal,2025-01,,97890.58793651241,roster
+emp-0108,Software Engineer,R&D,R&D,False,Montreal,2025-01,,96201.1259733889,roster
+emp-0109,Customer Success Manager,Customer Operations,COGS,False,Austin,2025-01,,90948.40686818407,roster
+emp-0110,Sales Development Rep,S&M,S&M,True,Austin,2025-01,2025-08,66749.92269949829,roster
+emp-0111,Senior Software Engineer,R&D,R&D,False,Paris,2025-02,,103362.87489444857,roster
+emp-0112,Account Executive,S&M,S&M,True,Austin,2025-02,,114160.62554240918,roster
+emp-0113,Software Engineer,R&D,R&D,False,Paris,2025-03,,77673.47745316358,roster
+emp-0114,Software Engineer,R&D,R&D,False,Paris,2025-03,,83736.28648957616,roster
+emp-0115,Product Manager,R&D,R&D,False,Montreal,2025-03,,122713.71556865308,roster
+emp-0116,Account Executive,S&M,S&M,True,Austin,2025-04,,110684.287232836,roster
+emp-0117,Support Engineer,Customer Operations,COGS,False,Montreal,2025-04,,63678.03899413264,roster
+emp-0118,Software Engineer,R&D,R&D,False,Montreal,2025-05,2026-04,98452.57436937094,roster
+emp-0119,Software Engineer,R&D,R&D,False,Montreal,2025-05,,93186.79884174725,roster
+emp-0120,Data Engineer,R&D,R&D,False,Paris,2025-05,,96883.21890341325,roster
+emp-0121,Customer Success Manager,Customer Operations,COGS,False,Austin,2025-06,,89212.92435063688,roster
+emp-0122,Marketing Manager,S&M,S&M,False,Austin,2025-06,2026-03,121624.13287010982,roster
+emp-0123,Account Executive,S&M,S&M,True,Austin,2025-07,,110131.08053817187,roster
+emp-0124,Account Executive,S&M,S&M,True,Austin,2025-07,,107827.79622247568,roster
+emp-0125,Sales Development Rep,S&M,S&M,True,Austin,2025-07,,63611.42975110952,roster
+emp-0126,Senior Software Engineer,R&D,R&D,False,Montreal,2025-08,,128988.04290233781,roster
+emp-0127,Software Engineer,R&D,R&D,False,Paris,2025-09,,79297.97795558245,roster
+emp-0128,Software Engineer,R&D,R&D,False,Paris,2025-09,2026-05,80713.1481786271,roster
+emp-0129,Product Designer,R&D,R&D,False,Montreal,2025-09,,104565.02276202326,roster
+emp-0130,Account Executive,S&M,S&M,True,Austin,2025-10,,114716.3555782229,roster
+emp-0131,Customer Success Manager,Customer Operations,COGS,False,Montreal,2025-10,,75829.23887457073,roster
+emp-0132,Finance & Operations,G&A,G&A,False,Montreal,2025-10,,91421.24088091066,roster
+emp-0133,Software Engineer,R&D,R&D,False,Montreal,2025-11,,92852.43741746529,roster
+emp-0134,Site Reliability Engineer,Customer Operations,COGS,False,Montreal,2025-11,,121578.6344613623,roster
+emp-0135,People & Talent,G&A,G&A,False,Montreal,2025-12,,84955.18476274454,roster
+emp-0136,Software Engineer,R&D,R&D,False,Montreal,2026-03,,96791.98564025684,roster
+emp-0137,Software Engineer,R&D,R&D,False,Montreal,2026-03,,94936.77857737464,roster
+emp-0138,Software Engineer,R&D,R&D,False,Montreal,2026-05,,93898.86090010835,roster
+emp-0139,Senior Software Engineer,R&D,R&D,False,Montreal,2026-04,,123816.32700165121,roster
+emp-0140,Senior Software Engineer,R&D,R&D,False,Montreal,2026-07,,130613.63771302304,roster
+emp-0141,Software Engineer,R&D,R&D,False,Paris,2026-04,,80860.75218019403,roster
+emp-0142,Software Engineer,R&D,R&D,False,Paris,2026-04,,77876.73833908432,roster
+emp-0143,Software Engineer,R&D,R&D,False,Paris,2026-07,,82603.54504969598,roster
+emp-0144,Data Engineer,R&D,R&D,False,Paris,2026-05,,98997.25576936644,roster
+emp-0145,Account Executive,S&M,S&M,True,Austin,2026-01,,114716.4399458489,roster
+emp-0146,Account Executive,S&M,S&M,True,Austin,2026-01,,112850.22073818672,roster
+emp-0147,Sales Development Rep,S&M,S&M,True,Austin,2026-02,,63354.47853714772,roster
+emp-0148,Customer Success Manager,Customer Operations,COGS,False,Austin,2026-03,,89929.1477090115,roster
+emp-0149,Customer Success Manager,Customer Operations,COGS,False,Austin,2026-03,,88537.71656010557,roster
+emp-0150,Finance & Operations,G&A,G&A,False,Montreal,2026-03,,92507.13097648128,roster
+emp-0151,Product Manager,R&D,R&D,False,Montreal,2025-04,,124019.89162424879,roster
+emp-0152,Senior Software Engineer,R&D,R&D,False,Montreal,2025-07,,125892.83368823276,roster
+emp-0153,Sales Development Rep,S&M,S&M,True,Austin,2025-07,,63510.89462728594,roster
+emp-0154,Support Engineer,Customer Operations,COGS,False,Montreal,2025-08,,67653.68940342881,roster
+emp-0155,Sales Development Rep,S&M,S&M,True,Austin,2025-09,,66986.09928750001,roster
+emp-0156,Sales Development Rep,S&M,S&M,True,Austin,2025-10,,65949.26484920329,roster
+emp-0157,Product Manager,R&D,R&D,False,Paris,2026-05,,99377.98508719142,roster
+emp-0158,Customer Success Manager,Customer Operations,COGS,False,Austin,2026-06,,90162.95051730091,roster
+emp-0159,Marketing Manager,S&M,S&M,False,Austin,2026-05,,121530.05109006376,roster
+emp-0160,Software Engineer,R&D,R&D,False,Montreal,2026-06,,96254.61409618812,roster
+emp-0161,Software Engineer,R&D,R&D,False,Paris,2026-07,,79437.45103332924,roster
+emp-0162,Software Engineer,R&D,R&D,False,Montreal,2026-08,,95833.36025633055,roster
+emp-0164,People & Talent,G&A,G&A,False,Montreal,2026-08,,84397.0501437197,roster

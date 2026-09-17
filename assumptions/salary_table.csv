@@ -1,0 +1,16 @@
+role,function,cost_bucket,sales_role,Montreal,Paris,Austin
+Software Engineer,R&D,R&D,0,95000,80000,135000
+Senior Software Engineer,R&D,R&D,0,125000,105000,175000
+Engineering Manager,R&D,R&D,0,150000,130000,200000
+Product Manager,R&D,R&D,0,120000,100000,160000
+Product Designer,R&D,R&D,0,100000,85000,140000
+Data Engineer,R&D,R&D,0,115000,95000,155000
+Site Reliability Engineer,Customer Operations,COGS,0,120000,105000,165000
+Customer Success Manager,Customer Operations,COGS,0,75000,65000,90000
+Support Engineer,Customer Operations,COGS,0,65000,55000,75000
+Account Executive,S&M,S&M,1,90000,80000,110000
+Sales Development Rep,S&M,S&M,1,55000,48000,65000
+Marketing Manager,S&M,S&M,0,95000,80000,120000
+Finance & Operations,G&A,G&A,0,90000,80000,115000
+People & Talent,G&A,G&A,0,85000,75000,105000
+Executive,G&A,G&A,0,240000,220000,280000

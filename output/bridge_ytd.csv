@@ -1,0 +1,30 @@
+line,line_label,component,budget,actual,impact,material
+revenue_platform,Platform revenue,volume,14329758.931197323,13868284.094295932,-560502.2800195992,True
+revenue_platform,Platform revenue,price,14329758.931197323,13868284.094295932,99027.44311820748,False
+revenue_insights,Insights revenue,volume,1214961.859187185,1144051.7009079154,-70910.1582792699,True
+revenue_insights,Insights revenue,price,1214961.859187185,1144051.7009079154,1.1340981733660405e-10,False
+cogs_cloud,Cloud hosting,usage,1234188.1627494397,1338077.2501586806,-103889.08740924067,True
+cogs_cloud,Cloud hosting,rate,1234188.1627494397,1338077.2501586806,-7.788658754456221e-11,False
+cogs_cloud,Cloud hosting,fixed,1234188.1627494397,1338077.2501586806,0.0,False
+cogs_payroll,Customer operations payroll,headcount,2269988.762557878,2246332.302035569,16771.977218877524,False
+cogs_payroll,Customer operations payroll,rate,2269988.762557878,2246332.302035569,6884.483303431585,False
+rd_payroll,R&D payroll,headcount,7494856.861779308,7123324.80712226,410908.10073854984,True
+rd_payroll,R&D payroll,rate,7494856.861779308,7123324.80712226,-39376.04608150264,False
+sm_payroll,Sales and marketing payroll,headcount,2776935.933093613,2556186.395839022,187083.45385876542,True
+sm_payroll,Sales and marketing payroll,rate,2776935.933093613,2556186.395839022,33666.08339582533,False
+ga_payroll,G&A payroll,headcount,1987184.1784182533,1996081.8363343587,10374.719787848158,False
+ga_payroll,G&A payroll,rate,1987184.1784182533,1996081.8363343587,-19272.37770395362,False
+sm_programs,Marketing programmes,volume,3402630.0,3036500.0,742630.0000000002,True
+sm_programs,Marketing programmes,rate,3402630.0,3036500.0,-376500.0,True
+cogs_third_party,Third-party software and data,spend,466341.62371153524,450370.0738561154,15971.549855419864,False
+cogs_payment,Payment processing,spend,233170.81185576762,225185.0369280577,7985.774927709936,False
+cogs_recruiting,Customer operations recruiting,spend,27000.0,40294.4722179627,-13294.472217962697,False
+rd_recruiting,R&D recruiting,spend,144750.0,187694.8937465691,-42944.89374656912,True
+rd_tooling,R&D tooling,spend,257103.0,243000.0,14103.0,False
+rd_contractors,R&D contractors,spend,480000.0,480000.0,0.0,False
+sm_recruiting,Sales and marketing recruiting,spend,60750.0,61867.67854668707,-1117.6785466870679,False
+sm_commission,Sales commission,spend,614756.7889336403,495308.78099523054,119448.00793840984,True
+ga_recruiting,G&A recruiting,spend,13500.0,26535.627168030143,-13035.627168030145,False
+ga_rent,Rent,spend,562961.0,537250.0,25711.0,True
+ga_software,Software seats,spend,205682.4,196740.0,8942.39999999999,False
+ga_fixed,Fixed G&A,spend,600000.0,600000.0,0.0,False

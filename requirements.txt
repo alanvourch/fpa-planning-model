@@ -1,0 +1,7 @@
+pandas==3.0.5
+numpy==2.5.3
+openpyxl==3.1.5
+matplotlib==3.11.2
+fpdf2==2.8.8
+pytest==9.1.1
+pywin32==312; sys_platform == "win32"

@@ -1,0 +1,8 @@
+option_id,hiring_plan,cloud_commit,rd_contractors_extra_month,rd_contractors_extra_months,attach_gain_uplift_pts,attach_gain_uplift_lag_months,label
+fy2026_budget,fy2026_budget,0,0,0,0.00,0,FY2026 budget as locked in December 2025 (bridge reference only)
+hold_ondemand,hold,0,0,0,0.00,0,Hold hiring; cloud on demand
+hold_commit,hold,1,0,0,0.00,0,Hold hiring; one-year cloud commitment
+phased_ondemand,phased,0,0,0,0.15,7,Phased plan; cloud on demand
+phased_commit,phased,1,0,0,0.15,7,Phased plan; one-year cloud commitment
+front_ondemand,front_loaded,0,80000,9,0.30,5,Front-loaded plan with Insights contractors; cloud on demand
+front_commit,front_loaded,1,80000,9,0.30,5,Front-loaded plan with Insights contractors; one-year cloud commitment

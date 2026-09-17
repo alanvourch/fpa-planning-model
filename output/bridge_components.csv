@@ -1,0 +1,233 @@
+month,line,line_label,component,budget,actual,impact,detail,budget_line,material
+2026-01,revenue_platform,Platform revenue,volume,1614950.547671018,1612141.6935088227,-16852.899181623616,Platform customers 485 against 490 budgeted,1614950.547671018,False
+2026-01,revenue_platform,Platform revenue,price,1614950.547671018,1612141.6935088227,14044.04501942833,"Platform revenue per customer 3,326 against 3,297 budgeted (monthly)",1614950.547671018,False
+2026-01,revenue_insights,Insights revenue,volume,123404.14954342532,121566.28552812578,-1837.864015299564,Insights customers 107 against 109 budgeted,123404.14954342532,False
+2026-01,revenue_insights,Insights revenue,price,123404.14954342532,121566.28552812578,2.435417265001805e-11,"Insights revenue per customer 1,135 against 1,135 budgeted (monthly)",123404.14954342532,False
+2026-01,cogs_cloud,Cloud hosting,usage,139018.6463581781,139519.28349768918,-500.6371395110737,"262,227 compute units against 261,050 budgeted",139018.6463581781,False
+2026-01,cogs_cloud,Cloud hosting,rate,139018.6463581781,139519.28349768918,-0.0,effective unit cost 0.4253 against 0.4253 budgeted,139018.6463581781,False
+2026-01,cogs_cloud,Cloud hosting,fixed,139018.6463581781,139519.28349768918,-0.0,"fixed cloud 28,000 against 28,000 budgeted",139018.6463581781,False
+2026-01,cogs_payroll,Customer operations payroll,headcount,269286.0003197348,274781.6329793212,-5495.632659586419,26.0 FTE against 25.5 budgeted (budget net of vacancy allowance),269286.0003197348,False
+2026-01,cogs_payroll,Customer operations payroll,rate,269286.0003197348,274781.6329793212,4.729372449219227e-11,"loaded cost per FTE 10,569 against 10,569 budgeted (monthly)",269286.0003197348,False
+2026-01,rd_payroll,R&D payroll,headcount,868781.2852224135,856615.015533075,21964.31516096868,64.0 FTE against 65.7 budgeted (budget net of vacancy allowance),868781.2852224135,False
+2026-01,rd_payroll,R&D payroll,rate,868781.2852224135,856615.015533075,-9798.045471630176,"loaded cost per FTE 13,385 against 13,232 budgeted (monthly)",868781.2852224135,False
+2026-01,sm_payroll,Sales and marketing payroll,headcount,333392.346845035,327723.1452083517,4926.980495246842,28.0 FTE against 28.4 budgeted (budget net of vacancy allowance),333392.346845035,False
+2026-01,sm_payroll,Sales and marketing payroll,rate,333392.346845035,327723.1452083517,742.2211414363992,"loaded cost per FTE 11,704 against 11,731 budgeted (monthly)",333392.346845035,False
+2026-01,ga_payroll,G&A payroll,headcount,240302.36480228166,245206.49469620577,-4904.129893924104,14.0 FTE against 13.7 budgeted (budget net of vacancy allowance),240302.36480228166,False
+2026-01,ga_payroll,G&A payroll,rate,240302.36480228166,245206.49469620577,-0.0,"loaded cost per FTE 17,515 against 17,515 budgeted (monthly)",240302.36480228166,False
+2026-01,sm_programs,Marketing programmes,volume,353430.0,276300.0,101430.00000000001,9 new logos against 12.6 budgeted,353430.0,True
+2026-01,sm_programs,Marketing programmes,rate,353430.0,276300.0,-24300.0,"programme spend per new logo 30,700 against 28,000 budgeted",353430.0,False
+2026-01,cogs_third_party,Third-party software and data,spend,52150.640916433294,52011.23937110845,139.40154532484303,"52,011 against 52,151 budgeted",52150.640916433294,False
+2026-01,cogs_payment,Payment processing,spend,26075.32045821665,26005.619685554226,69.70077266242515,"26,006 against 26,075 budgeted",26075.32045821665,False
+2026-01,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-01,rd_recruiting,R&D recruiting,spend,42750.0,0.0,42750.0,"0 against 42,750 budgeted",42750.0,True
+2026-01,rd_tooling,R&D tooling,spend,29547.0,28800.0,747.0,"28,800 against 29,547 budgeted",29547.0,False
+2026-01,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-01,sm_recruiting,Sales and marketing recruiting,spend,33000.0,34134.99910260535,-1134.9991026053467,"34,135 against 33,000 budgeted",33000.0,False
+2026-01,sm_commission,Sales commission,spend,64535.60410159826,48737.0613314367,15798.542770161563,"48,737 against 64,536 budgeted",64535.60410159826,False
+2026-01,ga_recruiting,G&A recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-01,ga_rent,Rent,spend,65317.0,64800.0,517.0,"64,800 against 65,317 budgeted",65317.0,False
+2026-01,ga_software,Software seats,spend,23990.4,23760.0,230.40000000000146,"23,760 against 23,990 budgeted",23990.4,False
+2026-01,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-02,revenue_platform,Platform revenue,volume,1660358.513828095,1642915.6475821866,-30848.64285457607,Platform customers 490 against 500 budgeted,1660358.513828095,False
+2026-02,revenue_platform,Platform revenue,price,1660358.513828095,1642915.6475821866,13405.776608667651,"Platform revenue per customer 3,351 against 3,323 budgeted (monthly)",1660358.513828095,False
+2026-02,revenue_insights,Insights revenue,volume,130574.91636910794,127024.78563157441,-3550.130737533528,Insights customers 111 against 114 budgeted,130574.91636910794,False
+2026-02,revenue_insights,Insights revenue,price,130574.91636910794,127024.78563157441,0.0,"Insights revenue per customer 1,146 against 1,146 budgeted (monthly)",130574.91636910794,False
+2026-02,cogs_cloud,Cloud hosting,usage,142927.85288226543,140607.98087657313,2319.872005692326,"265,318 compute units against 270,784 budgeted",142927.85288226543,False
+2026-02,cogs_cloud,Cloud hosting,rate,142927.85288226543,140607.98087657313,-0.0,effective unit cost 0.4244 against 0.4244 budgeted,142927.85288226543,False
+2026-02,cogs_cloud,Cloud hosting,fixed,142927.85288226543,140607.98087657313,-0.0,"fixed cloud 28,000 against 28,000 budgeted",142927.85288226543,False
+2026-02,cogs_payroll,Customer operations payroll,headcount,269286.0003197348,274781.6329793212,-5495.632659586419,26.0 FTE against 25.5 budgeted (budget net of vacancy allowance),269286.0003197348,False
+2026-02,cogs_payroll,Customer operations payroll,rate,269286.0003197348,274781.6329793212,4.729372449219227e-11,"loaded cost per FTE 10,569 against 10,569 budgeted (monthly)",269286.0003197348,False
+2026-02,rd_payroll,R&D payroll,headcount,925520.3452224134,856615.015533075,86046.10919301352,64.0 FTE against 70.6 budgeted (budget net of vacancy allowance),925520.3452224134,True
+2026-02,rd_payroll,R&D payroll,rate,925520.3452224134,856615.015533075,-17140.77950367506,"loaded cost per FTE 13,385 against 13,117 budgeted (monthly)",925520.3452224134,False
+2026-02,sm_payroll,Sales and marketing payroll,headcount,339895.0551783683,334190.5815590189,4624.422519433566,29.0 FTE against 29.4 budgeted (budget net of vacancy allowance),339895.0551783683,False
+2026-02,sm_payroll,Sales and marketing payroll,rate,339895.0551783683,334190.5815590189,1080.0510999158305,"loaded cost per FTE 11,524 against 11,561 budgeted (monthly)",339895.0551783683,False
+2026-02,ga_payroll,G&A payroll,headcount,249554.54480228166,245206.49469620577,11883.54975248959,14.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-02,ga_payroll,G&A payroll,rate,249554.54480228166,245206.49469620577,-7535.499646413729,"loaded cost per FTE 17,515 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-02,sm_programs,Marketing programmes,volume,395010.0,337700.0,87010.0,11 new logos against 14.1 budgeted,395010.0,True
+2026-02,sm_programs,Marketing programmes,rate,395010.0,337700.0,-29700.0,"programme spend per new logo 30,700 against 28,000 budgeted",395010.0,True
+2026-02,cogs_third_party,Third-party software and data,spend,53728.00290591609,53098.21299641283,629.7899095032553,"53,098 against 53,728 budgeted",53728.00290591609,False
+2026-02,cogs_payment,Payment processing,spend,26864.001452958044,26549.106498206413,314.8949547516313,"26,549 against 26,864 budgeted",26864.001452958044,False
+2026-02,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-02,rd_recruiting,R&D recruiting,spend,73500.0,0.0,73500.0,"0 against 73,500 budgeted",73500.0,True
+2026-02,rd_tooling,R&D tooling,spend,31752.0,28800.0,2952.0,"28,800 against 31,752 budgeted",31752.0,False
+2026-02,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-02,sm_recruiting,Sales and marketing recruiting,spend,9750.0,9503.171780572158,246.82821942784176,"9,503 against 9,750 budgeted",9750.0,False
+2026-02,sm_commission,Sales commission,spend,71430.2826670701,58264.460002657055,13165.822664413048,"58,264 against 71,430 budgeted",71430.2826670701,False
+2026-02,ga_recruiting,G&A recruiting,spend,13500.0,0.0,13500.0,"0 against 13,500 budgeted",13500.0,False
+2026-02,ga_rent,Rent,spend,68894.0,65300.0,3594.0,"65,300 against 68,894 budgeted",68894.0,False
+2026-02,ga_software,Software seats,spend,25225.200000000004,23940.0,1285.2000000000044,"23,940 against 25,225 budgeted",25225.200000000004,False
+2026-02,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-03,revenue_platform,Platform revenue,volume,1714652.1694987945,1679561.7535488007,-49108.87042903169,Platform customers 498 against 512 budgeted,1714652.1694987945,False
+2026-03,revenue_platform,Platform revenue,price,1714652.1694987945,1679561.7535488007,14018.454479037891,"Platform revenue per customer 3,376 against 3,348 budgeted (monthly)",1714652.1694987945,False
+2026-03,revenue_insights,Insights revenue,volume,138757.37998851403,133055.27827585308,-5702.101712660955,Insights customers 115 against 120 budgeted,138757.37998851403,False
+2026-03,revenue_insights,Insights revenue,price,138757.37998851403,133055.27827585308,2.6130612732017957e-11,"Insights revenue per customer 1,158 against 1,158 budgeted (monthly)",138757.37998851403,False
+2026-03,cogs_cloud,Cloud hosting,usage,147536.92978764136,166479.1971695539,-18942.267381912534,"326,928 compute units against 282,208 budgeted",147536.92978764136,False
+2026-03,cogs_cloud,Cloud hosting,rate,147536.92978764136,166479.1971695539,-0.0,effective unit cost 0.4236 against 0.4236 budgeted,147536.92978764136,False
+2026-03,cogs_cloud,Cloud hosting,fixed,147536.92978764136,166479.1971695539,-0.0,"fixed cloud 28,000 against 28,000 budgeted",147536.92978764136,False
+2026-03,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,283037.14714198903,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-03,cogs_payroll,Customer operations payroll,rate,288569.46031973476,283037.14714198903,905.1060880706464,"loaded cost per FTE 10,483 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-03,rd_payroll,R&D payroll,headcount,950092.5385557468,862049.0651846653,98520.35148840613,65.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,True
+2026-03,rd_payroll,R&D payroll,rate,950092.5385557468,862049.0651846653,-10476.87811732465,"loaded cost per FTE 13,262 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-03,sm_payroll,Sales and marketing payroll,headcount,339895.0551783683,306855.27145527827,27746.535116601477,27.0 FTE against 29.4 budgeted (budget net of vacancy allowance),339895.0551783683,True
+2026-03,sm_payroll,Sales and marketing payroll,rate,339895.0551783683,306855.27145527827,5293.248606488509,"loaded cost per FTE 11,365 against 11,561 budgeted (monthly)",339895.0551783683,False
+2026-03,ga_payroll,G&A payroll,headcount,249554.54480228166,254910.49273563866,-5092.9498939241275,15.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-03,ga_payroll,G&A payroll,rate,249554.54480228166,254910.49273563866,-262.9980394328959,"loaded cost per FTE 16,994 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-03,sm_programs,Marketing programmes,volume,474320.0000000001,399100.0,110320.00000000013,13 new logos against 16.9 budgeted,474320.0000000001,True
+2026-03,sm_programs,Marketing programmes,rate,474320.0000000001,399100.0,-35100.0,"programme spend per new logo 30,700 against 28,000 budgeted",474320.0000000001,True
+2026-03,cogs_third_party,Third-party software and data,spend,55602.28648461925,54378.51095473961,1223.77552987964,"54,379 against 55,602 budgeted",55602.28648461925,False
+2026-03,cogs_payment,Payment processing,spend,27801.143242309627,27189.255477369807,611.88776493982,"27,189 against 27,801 budgeted",27801.143242309627,False
+2026-03,cogs_recruiting,Customer operations recruiting,spend,27000.0,26770.02964036756,229.9703596324398,"26,770 against 27,000 budgeted",27000.0,False
+2026-03,rd_recruiting,R&D recruiting,spend,28500.0,28759.314632644724,-259.31463264472404,"28,759 against 28,500 budgeted",28500.0,False
+2026-03,rd_tooling,R&D tooling,spend,32634.0,29250.0,3384.0,"29,250 against 32,634 budgeted",32634.0,False
+2026-03,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-03,sm_recruiting,Sales and marketing recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-03,sm_commission,Sales commission,spend,82569.43661268386,67352.5683998013,15216.86821288256,"67,353 against 82,569 budgeted",82569.43661268386,False
+2026-03,ga_recruiting,G&A recruiting,spend,0.0,13876.069646472191,-13876.069646472191,"13,876 against 0 budgeted",0.0,False
+2026-03,ga_rent,Rent,spend,71050.0,65550.0,5500.0,"65,550 against 71,050 budgeted",71050.0,False
+2026-03,ga_software,Software seats,spend,25930.8,24120.0,1810.7999999999993,"24,120 against 25,931 budgeted",25930.8,False
+2026-03,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-04,revenue_platform,Platform revenue,volume,1763407.1607012397,1713674.2334110932,-63630.51670328785,Platform customers 504 against 523 budgeted,1763407.1607012397,True
+2026-04,revenue_platform,Platform revenue,price,1763407.1607012397,1713674.2334110932,13897.589413141328,"Platform revenue per customer 3,400 against 3,373 budgeted (monthly)",1763407.1607012397,False
+2026-04,revenue_insights,Insights revenue,volume,146734.36264974554,139082.29511292605,-7652.067536819499,Insights customers 119 against 125 budgeted,146734.36264974554,False
+2026-04,revenue_insights,Insights revenue,price,146734.36264974554,139082.29511292605,0.0,"Insights revenue per customer 1,169 against 1,169 budgeted (monthly)",146734.36264974554,False
+2026-04,cogs_cloud,Cloud hosting,usage,151773.6070798049,168149.59823270235,-16375.991152897433,"331,534 compute units against 292,796 budgeted",151773.6070798049,False
+2026-04,cogs_cloud,Cloud hosting,rate,151773.6070798049,168149.59823270235,-1.840384593662811e-11,effective unit cost 0.4227 against 0.4227 budgeted,151773.6070798049,False
+2026-04,cogs_cloud,Cloud hosting,fixed,151773.6070798049,168149.59823270235,-0.0,"fixed cloud 28,000 against 28,000 budgeted",151773.6070798049,False
+2026-04,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,283037.14714198903,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-04,cogs_payroll,Customer operations payroll,rate,288569.46031973476,283037.14714198903,905.1060880706464,"loaded cost per FTE 10,483 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-04,rd_payroll,R&D payroll,headcount,950092.5385557468,885296.3117078551,72318.13034787257,67.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,True
+2026-04,rd_payroll,R&D payroll,rate,950092.5385557468,885296.3117078551,-7521.9034999809155,"loaded cost per FTE 13,213 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-04,sm_payroll,Sales and marketing payroll,headcount,352750.6951783683,306855.27145527827,39246.12737665848,27.0 FTE against 30.4 budgeted (budget net of vacancy allowance),352750.6951783683,True
+2026-04,sm_payroll,Sales and marketing payroll,rate,352750.6951783683,306855.27145527827,6649.296346431536,"loaded cost per FTE 11,365 against 11,611 budgeted (monthly)",352750.6951783683,False
+2026-04,ga_payroll,G&A payroll,headcount,249554.54480228166,254910.49273563866,-5092.9498939241275,15.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-04,ga_payroll,G&A payroll,rate,249554.54480228166,254910.49273563866,-262.9980394328959,"loaded cost per FTE 16,994 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-04,sm_programs,Marketing programmes,volume,424270.0,368400.0,88270.0,12 new logos against 15.2 budgeted,424270.0,True
+2026-04,sm_programs,Marketing programmes,rate,424270.0,368400.0,-32400.0,"programme spend per new logo 30,700 against 28,000 budgeted",424270.0,True
+2026-04,cogs_third_party,Third-party software and data,spend,57304.24570052956,55582.69585572058,1721.5498448089784,"55,583 against 57,304 budgeted",57304.24570052956,False
+2026-04,cogs_payment,Payment processing,spend,28652.12285026478,27791.34792786029,860.7749224044892,"27,791 against 28,652 budgeted",28652.12285026478,False
+2026-04,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-04,rd_recruiting,R&D recruiting,spend,0.0,42383.07262813943,-42383.07262813943,"42,383 against 0 budgeted",0.0,True
+2026-04,rd_tooling,R&D tooling,spend,32634.0,30150.0,2484.0,"30,150 against 32,634 budgeted",32634.0,False
+2026-04,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-04,sm_recruiting,Sales and marketing recruiting,spend,18000.0,0.0,18000.0,"0 against 18,000 budgeted",18000.0,False
+2026-04,sm_commission,Sales commission,spend,76492.5760689969,63305.941368272215,13186.634700724688,"63,306 against 76,493 budgeted",76492.5760689969,False
+2026-04,ga_recruiting,G&A recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-04,ga_rent,Rent,spend,71540.0,66750.0,4790.0,"66,750 against 71,540 budgeted",71540.0,False
+2026-04,ga_software,Software seats,spend,26107.199999999997,24480.0,1627.199999999997,"24,480 against 26,107 budgeted",26107.199999999997,False
+2026-04,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-05,revenue_platform,Platform revenue,volume,1816411.8491521524,1753549.559361321,-75594.55236187499,Platform customers 513 against 535 budgeted,1816411.8491521524,True
+2026-05,revenue_platform,Platform revenue,price,1816411.8491521524,1753549.559361321,12732.262571043524,"Platform revenue per customer 3,421 against 3,397 budgeted (monthly)",1816411.8491521524,False
+2026-05,revenue_insights,Insights revenue,volume,155372.68983154173,145879.91000609408,-9492.779825447647,Insights customers 124 against 132 budgeted,155372.68983154173,False
+2026-05,revenue_insights,Insights revenue,price,155372.68983154173,145879.91000609408,-2.8084728193711974e-11,"Insights revenue per customer 1,181 against 1,181 budgeted (monthly)",155372.68983154173,False
+2026-05,cogs_cloud,Cloud hosting,usage,156374.99610677728,175878.46420091589,-19503.46809413859,"350,518 compute units against 304,289 budgeted",156374.99610677728,False
+2026-05,cogs_cloud,Cloud hosting,rate,156374.99610677728,175878.46420091589,-1.9457682931504104e-11,effective unit cost 0.4219 against 0.4219 budgeted,156374.99610677728,False
+2026-05,cogs_cloud,Cloud hosting,fixed,156374.99610677728,175878.46420091589,-0.0,"fixed cloud 28,000 against 28,000 budgeted",156374.99610677728,False
+2026-05,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,283037.14714198903,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-05,cogs_payroll,Customer operations payroll,rate,288569.46031973476,283037.14714198903,905.1060880706464,"loaded cost per FTE 10,483 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-05,rd_payroll,R&D payroll,headcount,950092.5385557468,910300.9758007616,46115.90920733901,69.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,True
+2026-05,rd_payroll,R&D payroll,rate,950092.5385557468,910300.9758007616,-6324.346452353851,"loaded cost per FTE 13,193 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-05,sm_payroll,Sales and marketing payroll,headcount,352750.6951783683,320140.53154027375,27634.84708770626,28.0 FTE against 30.4 budgeted (budget net of vacancy allowance),352750.6951783683,True
+2026-05,sm_payroll,Sales and marketing payroll,rate,352750.6951783683,320140.53154027375,4975.316550388263,"loaded cost per FTE 11,434 against 11,611 budgeted (monthly)",352750.6951783683,False
+2026-05,ga_payroll,G&A payroll,headcount,249554.54480228166,254910.49273563866,-5092.9498939241275,15.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-05,ga_payroll,G&A payroll,rate,249554.54480228166,254910.49273563866,-262.9980394328959,"loaded cost per FTE 16,994 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-05,sm_programs,Marketing programmes,volume,462000.0,549800.0,70000.0,14 new logos against 16.5 budgeted,462000.0,True
+2026-05,sm_programs,Marketing programmes,rate,462000.0,549800.0,-157800.0,"programme spend per new logo 39,271 against 28,000 budgeted",462000.0,True
+2026-05,cogs_third_party,Third-party software and data,spend,59153.53616951083,56982.88408102244,2170.6520884883867,"56,983 against 59,154 budgeted",59153.53616951083,False
+2026-05,cogs_payment,Payment processing,spend,29576.768084755415,28491.44204051122,1085.3260442441933,"28,491 against 29,577 budgeted",29576.768084755415,False
+2026-05,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-05,rd_recruiting,R&D recruiting,spend,0.0,43841.11526349993,-43841.11526349993,"43,841 against 0 budgeted",0.0,True
+2026-05,rd_tooling,R&D tooling,spend,32634.0,31050.0,1584.0,"31,050 against 32,634 budgeted",32634.0,False
+2026-05,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-05,sm_recruiting,Sales and marketing recruiting,spend,0.0,18229.507663509565,-18229.507663509565,"18,230 against 0 budgeted",0.0,False
+2026-05,sm_commission,Sales commission,spend,82103.64936538707,70130.11453701578,11973.534828371296,"70,130 against 82,104 budgeted",82103.64936538707,False
+2026-05,ga_recruiting,G&A recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-05,ga_rent,Rent,spend,71540.0,68300.0,3240.0,"68,300 against 71,540 budgeted",71540.0,False
+2026-05,ga_software,Software seats,spend,26107.199999999997,25020.0,1087.199999999997,"25,020 against 26,107 budgeted",26107.199999999997,False
+2026-05,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-06,revenue_platform,Platform revenue,volume,1874614.694512374,1790911.8534541766,-97100.83918025628,Platform customers 520 against 548 budgeted,1874614.694512374,True
+2026-06,revenue_platform,Platform revenue,price,1874614.694512374,1790911.8534541766,13397.998122058882,"Platform revenue per customer 3,445 against 3,419 budgeted (monthly)",1874614.694512374,False
+2026-06,revenue_insights,Insights revenue,volume,164804.5120144588,152547.34085539286,-12257.171159065934,Insights customers 128 against 138 budgeted,164804.5120144588,False
+2026-06,revenue_insights,Insights revenue,price,164804.5120144588,152547.34085539286,0.0,"Insights revenue per customer 1,193 against 1,193 budgeted (monthly)",164804.5120144588,False
+2026-06,cogs_cloud,Cloud hosting,usage,161424.063305684,179584.58317450676,-18160.51986882276,"360,023 compute units against 316,891 budgeted",161424.063305684,False
+2026-06,cogs_cloud,Cloud hosting,rate,161424.063305684,179584.58317450676,-1.998530052215053e-11,effective unit cost 0.4210 against 0.4210 budgeted,161424.063305684,False
+2026-06,cogs_cloud,Cloud hosting,fixed,161424.063305684,179584.58317450676,-0.0,"fixed cloud 28,000 against 28,000 budgeted",161424.063305684,False
+2026-06,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,282552.53155031987,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-06,cogs_payroll,Customer operations payroll,rate,288569.46031973476,282552.53155031987,1389.7216797398505,"loaded cost per FTE 10,465 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-06,rd_payroll,R&D payroll,headcount,950092.5385557468,890741.5808156335,59217.01977760579,68.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,True
+2026-06,rd_payroll,R&D payroll,rate,950092.5385557468,890741.5808156335,133.93796250740706,"loaded cost per FTE 13,099 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-06,sm_payroll,Sales and marketing payroll,headcount,352750.6951783683,320140.53154027375,27634.84708770626,28.0 FTE against 30.4 budgeted (budget net of vacancy allowance),352750.6951783683,True
+2026-06,sm_payroll,Sales and marketing payroll,rate,352750.6951783683,320140.53154027375,4975.316550388263,"loaded cost per FTE 11,434 against 11,611 budgeted (monthly)",352750.6951783683,False
+2026-06,ga_payroll,G&A payroll,headcount,249554.54480228166,244028.03939165163,11883.54975248959,14.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-06,ga_payroll,G&A payroll,rate,249554.54480228166,244028.03939165163,-6357.044341859575,"loaded cost per FTE 17,431 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-06,sm_programs,Marketing programmes,volume,508200.00000000006,399100.0,144200.00000000006,13 new logos against 18.2 budgeted,508200.00000000006,True
+2026-06,sm_programs,Marketing programmes,rate,508200.00000000006,399100.0,-35100.0,"programme spend per new logo 30,700 against 28,000 budgeted",508200.00000000006,True
+2026-06,cogs_third_party,Third-party software and data,spend,61182.576195804984,58303.77582928708,2878.800366517906,"58,304 against 61,183 budgeted",61182.576195804984,False
+2026-06,cogs_payment,Payment processing,spend,30591.288097902492,29151.887914643543,1439.4001832589493,"29,152 against 30,591 budgeted",30591.288097902492,False
+2026-06,cogs_recruiting,Customer operations recruiting,spend,0.0,13524.442577595137,-13524.442577595137,"13,524 against 0 budgeted",0.0,False
+2026-06,rd_recruiting,R&D recruiting,spend,0.0,14438.192114428217,-14438.192114428217,"14,438 against 0 budgeted",0.0,False
+2026-06,rd_tooling,R&D tooling,spend,32634.0,30600.0,2034.0,"30,600 against 32,634 budgeted",32634.0,False
+2026-06,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-06,sm_recruiting,Sales and marketing recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-06,sm_commission,Sales commission,spend,88897.45329481333,68101.65497535258,20795.79831946075,"68,102 against 88,897 budgeted",88897.45329481333,False
+2026-06,ga_recruiting,G&A recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-06,ga_rent,Rent,spend,71540.0,67450.0,4090.0,"67,450 against 71,540 budgeted",71540.0,False
+2026-06,ga_software,Software seats,spend,26107.199999999997,24660.0,1447.199999999997,"24,660 against 26,107 budgeted",26107.199999999997,False
+2026-06,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-07,revenue_platform,Platform revenue,volume,1919980.3526011854,1820439.9121386632,-109390.32116440385,Platform customers 526 against 557 budgeted,1919980.3526011854,True
+2026-07,revenue_platform,Platform revenue,price,1919980.3526011854,1820439.9121386632,9849.880701881657,"Platform revenue per customer 3,463 against 3,444 budgeted (monthly)",1919980.3526011854,False
+2026-07,revenue_insights,Insights revenue,volume,173285.44601791745,158978.88416099397,-14306.561856923541,Insights customers 132 against 144 budgeted,173285.44601791745,False
+2026-07,revenue_insights,Insights revenue,price,173285.44601791745,158978.88416099397,6.000693309613696e-11,"Insights revenue per customer 1,205 against 1,205 budgeted (monthly)",173285.44601791745,False
+2026-07,cogs_cloud,Cloud hosting,usage,165507.82684153583,179693.63836189557,-14185.81152035972,"361,004 compute units against 327,244 budgeted",165507.82684153583,False
+2026-07,cogs_cloud,Cloud hosting,rate,165507.82684153583,179693.63836189557,-2.0039758154279458e-11,effective unit cost 0.4202 against 0.4202 budgeted,165507.82684153583,False
+2026-07,cogs_cloud,Cloud hosting,fixed,165507.82684153583,179693.63836189557,-0.0,"fixed cloud 28,000 against 28,000 budgeted",165507.82684153583,False
+2026-07,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,282552.53155031987,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-07,cogs_payroll,Customer operations payroll,rate,288569.46031973476,282552.53155031987,1389.7216797398505,"loaded cost per FTE 10,465 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-07,rd_payroll,R&D payroll,headcount,950092.5385557468,925826.9615281529,19913.68806680545,71.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,False
+2026-07,rd_payroll,R&D payroll,rate,950092.5385557468,925826.9615281529,4351.888960788454,"loaded cost per FTE 13,040 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-07,sm_payroll,Sales and marketing payroll,headcount,352750.6951783683,320140.53154027375,27634.84708770626,28.0 FTE against 30.4 budgeted (budget net of vacancy allowance),352750.6951783683,True
+2026-07,sm_payroll,Sales and marketing payroll,rate,352750.6951783683,320140.53154027375,4975.316550388263,"loaded cost per FTE 11,434 against 11,611 budgeted (monthly)",352750.6951783683,False
+2026-07,ga_payroll,G&A payroll,headcount,249554.54480228166,244028.03939165163,11883.54975248959,14.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-07,ga_payroll,G&A payroll,rate,249554.54480228166,244028.03939165163,-6357.044341859575,"loaded cost per FTE 17,431 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-07,sm_programs,Marketing programmes,volume,392700.0,337700.0,84700.00000000001,11 new logos against 14.0 budgeted,392700.0,True
+2026-07,sm_programs,Marketing programmes,rate,392700.0,337700.0,-29700.0,"programme spend per new logo 30,700 against 28,000 budgeted",392700.0,True
+2026-07,cogs_third_party,Third-party software and data,spend,62797.973958573086,59382.563888989716,3415.4100695833695,"59,383 against 62,798 budgeted",62797.973958573086,False
+2026-07,cogs_payment,Payment processing,spend,31398.986979286543,29691.281944494858,1707.7050347916847,"29,691 against 31,399 budgeted",31398.986979286543,False
+2026-07,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-07,rd_recruiting,R&D recruiting,spend,0.0,43898.19506940724,-43898.19506940724,"43,898 against 0 budgeted",0.0,True
+2026-07,rd_tooling,R&D tooling,spend,32634.0,31950.0,684.0,"31,950 against 32,634 budgeted",32634.0,False
+2026-07,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-07,sm_recruiting,Sales and marketing recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-07,sm_commission,Sales commission,spend,74103.37252583545,56649.12857019864,17454.24395563681,"56,649 against 74,103 budgeted",74103.37252583545,False
+2026-07,ga_recruiting,G&A recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-07,ga_rent,Rent,spend,71540.0,69100.0,2440.0,"69,100 against 71,540 budgeted",71540.0,False
+2026-07,ga_software,Software seats,spend,26107.199999999997,25200.0,907.1999999999971,"25,200 against 26,107 budgeted",26107.199999999997,False
+2026-07,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False
+2026-08,revenue_platform,Platform revenue,volume,1965383.643232464,1855089.4412908673,-117975.63814454485,Platform customers 533 against 567 budgeted,1965383.643232464,True
+2026-08,revenue_platform,Platform revenue,price,1965383.643232464,1855089.4412908673,7681.436202948208,"Platform revenue per customer 3,483 against 3,468 budgeted (monthly)",1965383.643232464,False
+2026-08,revenue_insights,Insights revenue,volume,182028.40277247422,165916.921336955,-16111.481435519241,Insights customers 136 against 150 budgeted,182028.40277247422,False
+2026-08,revenue_insights,Insights revenue,price,182028.40277247422,165916.921336955,3.100282705214305e-11,"Insights revenue per customer 1,217 against 1,217 budgeted (monthly)",182028.40277247422,False
+2026-08,cogs_cloud,Cloud hosting,usage,169624.24038755283,188164.50464484372,-18540.26425729089,"381,927 compute units against 337,716 budgeted",169624.24038755283,False
+2026-08,cogs_cloud,Cloud hosting,rate,169624.24038755283,188164.50464484372,-0.0,effective unit cost 0.4194 against 0.4194 budgeted,169624.24038755283,False
+2026-08,cogs_cloud,Cloud hosting,fixed,169624.24038755283,188164.50464484372,-0.0,"fixed cloud 28,000 against 28,000 budgeted",169624.24038755283,False
+2026-08,cogs_payroll,Customer operations payroll,headcount,288569.46031973476,282552.53155031987,4627.20708967506,27.0 FTE against 27.4 budgeted (budget net of vacancy allowance),288569.46031973476,False
+2026-08,cogs_payroll,Customer operations payroll,rate,288569.46031973476,282552.53155031987,1389.7216797398505,"loaded cost per FTE 10,465 against 10,516 budgeted (monthly)",288569.46031973476,False
+2026-08,rd_payroll,R&D payroll,headcount,950092.5385557468,935879.881019042,6812.577496538673,72.0 FTE against 72.5 budgeted (budget net of vacancy allowance),950092.5385557468,False
+2026-08,rd_payroll,R&D payroll,rate,950092.5385557468,935879.881019042,7400.0800401661545,"loaded cost per FTE 12,998 against 13,101 budgeted (monthly)",950092.5385557468,False
+2026-08,sm_payroll,Sales and marketing payroll,headcount,352750.6951783683,320140.53154027375,27634.84708770626,28.0 FTE against 30.4 budgeted (budget net of vacancy allowance),352750.6951783683,True
+2026-08,sm_payroll,Sales and marketing payroll,rate,352750.6951783683,320140.53154027375,4975.316550388263,"loaded cost per FTE 11,434 against 11,611 budgeted (monthly)",352750.6951783683,False
+2026-08,ga_payroll,G&A payroll,headcount,249554.54480228166,252881.2899517278,-5092.9498939241275,15.0 FTE against 14.7 budgeted (budget net of vacancy allowance),249554.54480228166,False
+2026-08,ga_payroll,G&A payroll,rate,249554.54480228166,252881.2899517278,1766.2047444779455,"loaded cost per FTE 16,859 against 16,976 budgeted (monthly)",249554.54480228166,False
+2026-08,sm_programs,Marketing programmes,volume,392700.0,368400.0,56700.00000000001,12 new logos against 14.0 budgeted,392700.0,True
+2026-08,sm_programs,Marketing programmes,rate,392700.0,368400.0,-32400.0,"programme spend per new logo 30,700 against 28,000 budgeted",392700.0,True
+2026-08,cogs_third_party,Third-party software and data,spend,64422.36138014815,60630.19087883466,3792.170501313485,"60,630 against 64,422 budgeted",64422.36138014815,False
+2026-08,cogs_payment,Payment processing,spend,32211.180690074078,30315.095439417335,1896.0852506567426,"30,315 against 32,211 budgeted",32211.180690074078,False
+2026-08,cogs_recruiting,Customer operations recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-08,rd_recruiting,R&D recruiting,spend,0.0,14375.004038449582,-14375.004038449582,"14,375 against 0 budgeted",0.0,False
+2026-08,rd_tooling,R&D tooling,spend,32634.0,32400.0,234.0,"32,400 against 32,634 budgeted",32634.0,False
+2026-08,rd_contractors,R&D contractors,spend,60000.0,60000.0,-0.0,"60,000 against 60,000 budgeted",60000.0,False
+2026-08,sm_recruiting,Sales and marketing recruiting,spend,0.0,0.0,-0.0,0 against 0 budgeted,0.0,False
+2026-08,sm_commission,Sales commission,spend,74624.41429725537,62767.85181049626,11856.56248675911,"62,768 against 74,624 budgeted",74624.41429725537,False
+2026-08,ga_recruiting,G&A recruiting,spend,0.0,12659.557521557954,-12659.557521557954,"12,660 against 0 budgeted",0.0,False
+2026-08,ga_rent,Rent,spend,71540.0,70000.0,1540.0,"70,000 against 71,540 budgeted",71540.0,False
+2026-08,ga_software,Software seats,spend,26107.199999999997,25560.0,547.1999999999971,"25,560 against 26,107 budgeted",26107.199999999997,False
+2026-08,ga_fixed,Fixed G&A,spend,75000.0,75000.0,-0.0,"75,000 against 75,000 budgeted",75000.0,False

@@ -157,7 +157,8 @@ def hbar_chart(rows: list, floor: float, floor_label: str, fmt, width=440, heigh
         else:
             out.append(f'<text x="{ml - 8}" y="{y + bh / 2 + 4:.1f}" text-anchor="end" class="tick">{html.escape(label)}</text>')
         out.append(f'<rect x="{ml}" y="{y:.1f}" width="{max(1, sx(v) - ml):.1f}" height="{bh:.1f}" fill="{BLUE if ok else RED}" rx="3"><title>{html.escape(label)}: {fmt(v)}</title></rect>')
-        out.append(f'<text x="{sx(v) + 6:.1f}" y="{y + bh / 2 + 4:.1f}" class="tick">{fmt(v)}</text>')
+        # surface-coloured halo so the floor line never runs through a value label
+        out.append(f'<text x="{sx(v) + 6:.1f}" y="{y + bh / 2 + 4:.1f}" class="tick" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">{fmt(v)}</text>')
     out.append(f'<line x1="{sx(floor):.1f}" x2="{sx(floor):.1f}" y1="{mt}" y2="{mt + ph}" stroke="#171715" stroke-width="1.2"/>')
     out.append(f'<text x="{sx(floor) + 4:.1f}" y="{height - 8}" class="tick">{html.escape(floor_label)}</text>')
     out.append("</svg>")
